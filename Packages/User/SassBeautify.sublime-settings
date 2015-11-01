@@ -1,0 +1,9 @@
+{
+    "indent": 2,
+    "dasherize": false,
+    "old": false,
+    "path": false,
+    "beautifyOnSave": false,
+    "inlineComments": true,
+    "newlineBetweenSelectors": true
+}

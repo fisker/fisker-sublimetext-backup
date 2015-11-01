@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"CSS",
+		"Hayaku - tools for writing CSS faster",
+		"Vintage"
+	],
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true
+}
