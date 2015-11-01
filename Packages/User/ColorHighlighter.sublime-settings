@@ -1,4 +1,5 @@
 {
+    "enabled": false,
     "ha_style": "filled",
     "icons": false
 }
