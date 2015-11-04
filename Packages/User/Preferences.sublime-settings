@@ -3,7 +3,10 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
+		"BracketHighlighter",
 		"CSS",
+		"JavaScript Completions",
+		"SublimeLinter-html-tidy",
 		"Vintage"
 	],
 	"translate_tabs_to_spaces": true,

@@ -1,14 +1,19 @@
 {
     "user": {
-        "@disable": true,
+        "@disable": false,
         "debug": true,
         "delay": 0.25,
         "error_color": "D02000",
         "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
         "gutter_theme_excludes": [],
-        "lint_mode": "save only",
+        "lint_mode": "manual",
         "linters": {
             "coffee": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "coffeelint": {
                 "@disable": false,
                 "args": [],
                 "excludes": []
@@ -18,8 +23,18 @@
                 "args": [],
                 "errors": "",
                 "excludes": [],
-                "ignore": "",
-                "warnings": ""
+                "ignore": "adjoining-classes,box-model,box-sizing,compatible-vendor-prefixes,empty-rules,font-sizes,gradients,ids,import,important,star-property-hack,underscore-property-hack",
+                "warnings": "display-property-grouping,duplicate-background-images,duplicate-properties,fallback-colors,floats,font-faces,known-properties,non-link-hover,outline-none,overqualified-elements,qualified-headings,regex-selectors,shorthand,text-indent,vendor-prefix,unique-headings,universal-selector,unqualified-attributes,zero-units"
+            },
+            "htmltidy": {
+                "@disable": true,
+                "args": [],
+                "excludes": []
+            },
+            "jscs": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
             },
             "jshint": {
                 "@disable": false,
@@ -30,11 +45,17 @@
                 "@disable": false,
                 "args": [],
                 "excludes": []
+            },
+            "shellcheck": {
+                "@disable": false,
+                "args": [],
+                "exclude": "",
+                "excludes": []
             }
         },
         "mark_style": "outline",
         "no_column_highlights_line": false,
-        "passive_warnings": false,
+        "passive_warnings": true,
         "paths": {
             "linux": [],
             "osx": [],
