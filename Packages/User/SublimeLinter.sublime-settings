@@ -1,84 +1,143 @@
 {
-    "user": {
-        "@disable": false,
-        "debug": true,
-        "delay": 0.25,
-        "error_color": "D02000",
-        "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
-        "gutter_theme_excludes": [],
-        "lint_mode": "manual",
-        "linters": {
-            "coffee": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "coffeelint": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "csslint": {
-                "@disable": true,
-                "args": [],
-                "errors": "",
-                "excludes": [],
-                "ignore": "adjoining-classes,box-model,box-sizing,compatible-vendor-prefixes,empty-rules,font-sizes,gradients,ids,import,important,star-property-hack,underscore-property-hack",
-                "warnings": "display-property-grouping,duplicate-background-images,duplicate-properties,fallback-colors,floats,font-faces,known-properties,non-link-hover,outline-none,overqualified-elements,qualified-headings,regex-selectors,shorthand,text-indent,vendor-prefix,unique-headings,universal-selector,unqualified-attributes,zero-units"
-            },
-            "htmltidy": {
-                "@disable": true,
-                "args": [],
-                "excludes": []
-            },
-            "jscs": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "jshint": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "sass": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
-            "shellcheck": {
-                "@disable": false,
-                "args": [],
-                "exclude": "",
-                "excludes": []
-            }
-        },
-        "mark_style": "outline",
-        "no_column_highlights_line": false,
-        "passive_warnings": true,
-        "paths": {
-            "linux": [],
-            "osx": [],
-            "windows": []
-        },
-        "python_paths": {
-            "linux": [],
-            "osx": [],
-            "windows": []
-        },
-        "rc_search_limit": 3,
-        "shell_timeout": 10,
-        "show_errors_on_save": true,
-        "show_marks_in_minimap": true,
-        "syntax_map": {
-            "html (django)": "html",
-            "html (rails)": "html",
-            "html 5": "html",
-            "javascript (babel)": "javascript",
-            "php": "html",
-            "python django": "python"
-        },
-        "warning_color": "DDB700",
-        "wrap_find": true
-    }
+	"user":
+	{
+		"@disable": true,
+		"debug": true,
+		"delay": 0.25,
+		"error_color": "D02000",
+		"gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
+		"gutter_theme_excludes":
+		[
+		],
+		"lint_mode": "manual",
+		"linters":
+		{
+			"coffee":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"coffeelint":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"csslint":
+			{
+				"@disable": true,
+				"args":
+				[
+				],
+				"errors": "",
+				"excludes":
+				[
+				],
+				"ignore": "adjoining-classes,box-model,box-sizing,compatible-vendor-prefixes,empty-rules,font-sizes,gradients,ids,import,important,star-property-hack,underscore-property-hack",
+				"warnings": "display-property-grouping,duplicate-background-images,duplicate-properties,fallback-colors,floats,font-faces,known-properties,non-link-hover,outline-none,overqualified-elements,qualified-headings,regex-selectors,shorthand,text-indent,vendor-prefix,unique-headings,universal-selector,unqualified-attributes,zero-units"
+			},
+			"htmltidy":
+			{
+				"@disable": true,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"jscs":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"jshint":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"sass":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"shellcheck":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"exclude": "",
+				"excludes":
+				[
+				]
+			}
+		},
+		"mark_style": "outline",
+		"no_column_highlights_line": false,
+		"passive_warnings": true,
+		"paths":
+		{
+			"linux":
+			[
+			],
+			"osx":
+			[
+			],
+			"windows":
+			[
+			]
+		},
+		"python_paths":
+		{
+			"linux":
+			[
+			],
+			"osx":
+			[
+			],
+			"windows":
+			[
+			]
+		},
+		"rc_search_limit": 3,
+		"shell_timeout": 10,
+		"show_errors_on_save": false,
+		"show_marks_in_minimap": true,
+		"syntax_map":
+		{
+			"html (django)": "html",
+			"html (rails)": "html",
+			"html 5": "html",
+			"javascript (babel)": "javascript",
+			"php": "html",
+			"python django": "python"
+		},
+		"warning_color": "DDB700",
+		"wrap_find": true
+	}
 }
