@@ -1,11 +1,12 @@
 {
-	"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (Dark) (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
 	"font_size": 14,
 	"ignored_packages":
 	[
 		"AutoCompleteJS",
 		"BracketHighlighter",
 		"CSS",
+		"JavaScript",
 		"JavaScript Completions",
 		"JavaScriptNext - ES6 Syntax",
 		"SublimeLinter-html-tidy",
