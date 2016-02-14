@@ -4,11 +4,11 @@
 	"ignored_packages":
 	[
 		"AutoCompleteJS",
-		"BracketHighlighter",
 		"CSS",
 		"JavaScript",
 		"JavaScript Completions",
 		"JavaScriptNext - ES6 Syntax",
+		"Markdown",
 		"SublimeLinter-html-tidy",
 		"Vintage"
 	],

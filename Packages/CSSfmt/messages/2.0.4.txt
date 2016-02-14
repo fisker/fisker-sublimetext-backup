@@ -1,0 +1,8 @@
+Sublime Text plugin for CSSfmt.
+https://github.com/dmnsgn/sublime-cssfmt
+
+
+Version 2.0.4
+********************************************************************************
+
+	- Update to CSSfmt 1.0.1

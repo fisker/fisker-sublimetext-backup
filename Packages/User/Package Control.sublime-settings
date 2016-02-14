@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"3024 Color Scheme",
+		"AdvancedNewFile",
 		"Alignment",
 		"All Autocomplete",
 		"AutoCompleteJS",
@@ -19,13 +20,18 @@
 		"Can I Use",
 		"CoffeeCompile",
 		"Color Highlighter",
+		"ColorPicker",
 		"ConvertToUTF8",
 		"CSS Completions",
 		"CSS3",
+		"CSScomb",
 		"cssDOC",
+		"CSSfmt",
+		"DocBlockr",
 		"EditorConfig",
 		"Emmet",
 		"Focus File on Sidebar",
+		"Git",
 		"HTML-CSS-JS Prettify",
 		"HTML5",
 		"HTMLAttributes",
@@ -33,16 +39,20 @@
 		"Jade",
 		"Jade Build",
 		"Jade Snippets",
+		"JavaScript & NodeJS Snippets",
 		"JavaScript Completions",
 		"JavaScriptNext - ES6 Syntax",
 		"jQuery",
 		"jQuery Snippets pack",
 		"JSCS-Formatter",
+		"JsFormat",
 		"JSHint",
 		"LESS",
 		"MarieAssembly",
 		"Markdown Preview",
+		"MarkdownEditing",
 		"NCL",
+		"Nettuts+ Fetch",
 		"Oceanic Color Scheme",
 		"Package Control",
 		"PhpDoc",
@@ -71,9 +81,15 @@
 		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
 		"SublimeLinter-shellcheck",
+		"SyncedSideBar",
 		"SyncedSidebarBg",
 		"Tag",
+		"Terminal",
 		"Theme - Soda",
 		"TrailingSpaces"
+	],
+	"repositories":
+	[
+		"https://github.com/dmnsgn/sublime-cssfmt"
 	]
 }

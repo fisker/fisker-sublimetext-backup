@@ -1,5 +1,5 @@
 {
-    "enabled": false,
+    "enabled": true,
     "ha_style": "filled",
     "icons": false
 }
