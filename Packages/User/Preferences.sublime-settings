@@ -1,17 +1,19 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Source Code Pro",
 	"font_size": 13,
 	"ignored_packages":
 	[
-		"AutoCompleteJS",
 		"CSS",
 		"JavaScript",
-		"JavaScript Completions",
-		"JavaScriptNext - ES6 Syntax",
 		"Markdown",
 		"SublimeLinter-html-tidy",
+		"TrailingSpaces",
 		"Vintage"
 	],
+	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }
