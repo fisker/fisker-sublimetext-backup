@@ -6,5 +6,12 @@
 	],
 	"validator_language": "zh-cn",
 	"validator_timeout": 10,
-	"zoom_to_error": false
+	"zoom_to_error": false,
+  "snippets": {
+    "html": {
+     "abbreviations": {
+       "viewport": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no,minimal-ui\">"
+     }
+    }
+  }
 }
