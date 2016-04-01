@@ -5,8 +5,9 @@
 	"font_size": 13,
 	"ignored_packages":
 	[
-		"CSS",
 		"JavaScript",
+		"LiveReload",
+		"LiveStyle",
 		"Markdown",
 		"SublimeLinter-html-tidy",
 		"TrailingSpaces",
