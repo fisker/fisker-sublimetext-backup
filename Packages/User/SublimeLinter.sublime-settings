@@ -38,7 +38,9 @@
             },
             "jscs": {
                 "@disable": false,
-                "args": ["--verbose"],
+                "args": [
+                    "--verbose"
+                ],
                 "excludes": []
             },
             "jshint": {
@@ -62,6 +64,11 @@
                 "@disable": true,
                 "args": [],
                 "exclude": "",
+                "excludes": []
+            },
+            "standard": {
+                "@disable": false,
+                "args": [],
                 "excludes": []
             },
             "stylelint": {

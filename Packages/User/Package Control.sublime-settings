@@ -5,8 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"3024 Color Scheme",
-		"AdvancedNewFile",
 		"Alignment",
 		"All Autocomplete",
 		"AutoFileName",
@@ -14,7 +12,6 @@
 		"Babel",
 		"Babel Snippets",
 		"Base64 Fold",
-		"Bootstrap 3 Jade Snippets",
 		"BracketHighlighter",
 		"Can I Use",
 		"CleanCSS",
@@ -31,7 +28,6 @@
 		"cssDOC",
 		"CSSfmt",
 		"DocBlockr",
-		"DocBlockr_with_update_capability",
 		"EditorConfig",
 		"Emmet",
 		"Focus File on Sidebar",
@@ -61,10 +57,8 @@
 		"MarieAssembly",
 		"Markdown Preview",
 		"MarkdownEditing",
-		"Material Theme",
 		"NCL",
 		"Nettuts+ Fetch",
-		"Oceanic Color Scheme",
 		"Package Control",
 		"PhpDoc",
 		"Pretty JSON",
@@ -73,11 +67,10 @@
 		"SassBeautify",
 		"SCSS",
 		"SCSS Snippets",
-		"Seti_UI",
-		"Seti_UX",
 		"SideBarEnhancements",
 		"SideBarFolders",
 		"SidebarSeparator",
+		"StandardFormat",
 		"Stylus",
 		"Stylus Clean Completions",
 		"Stylus-Snippets",
@@ -88,6 +81,7 @@
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-contrib-sass-lint",
 		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-contrib-standard",
 		"SublimeLinter-contrib-stylelint",
 		"SublimeLinter-csslint",
 		"SublimeLinter-html-tidy",
@@ -98,9 +92,7 @@
 		"SyncedSidebarBg",
 		"Syntax Highlighting for Sass",
 		"Tag",
-		"Terminal",
-		"Theme - Soda SolarizedDark",
-		"TrailingSpaces"
+		"Terminal"
 	],
 	"repositories":
 	[
