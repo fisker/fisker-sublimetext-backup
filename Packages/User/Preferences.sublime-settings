@@ -1,14 +1,18 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
-	"font_size": 13,
+	"font_size": 12,
+	"highlight_line": true,
 	"ignored_packages":
 	[
 		"JavaScript",
 		"LiveReload",
 		"LiveStyle",
 		"Markdown",
+		"StandardFormat",
+		"SublimeLinter-contrib-standard",
 		"SublimeLinter-html-tidy",
 		"Vintage"
 	],

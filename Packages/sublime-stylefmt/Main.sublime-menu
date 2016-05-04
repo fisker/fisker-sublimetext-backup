@@ -1,0 +1,47 @@
+[
+	{
+		"id":"tools",
+		"caption":"Tools",
+		"mnemonic": "t",
+		"children":[
+			{
+				"id":"stylefmt",
+				"caption":"Run Stylefmt",
+				"command":"stylefmt"
+			}
+		]
+	},
+	{
+		"id":"preferences",
+		"caption":"Preferences",
+		"mnemonic":"n",
+		"children":[
+			{
+				"id":"package-settings",
+				"caption":"Package Settings",
+				"mnemonic":"P",
+				"children":[
+					{
+						"caption":"Stylefmt",
+						"children":[
+							{
+								"command":"open_file",
+								"args":{
+									"file":"${packages}/Stylefmt/Stylefmt.sublime-settings"
+								},
+								"caption":"Settings – Default"
+							},
+							{
+								"command":"open_file",
+								"args":{
+									"file":"${packages}/User/Stylefmt.sublime-settings"
+								},
+								"caption":"Settings – User"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
