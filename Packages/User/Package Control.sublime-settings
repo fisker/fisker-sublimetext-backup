@@ -61,6 +61,7 @@
 		"Package Control",
 		"PhpDoc",
 		"Pretty JSON",
+		"rem-unit",
 		"Sass",
 		"SASS Build",
 		"SASS Snippets",
@@ -97,6 +98,7 @@
 	],
 	"repositories":
 	[
-		"https://github.com/dmnsgn/sublime-cssfmt"
+		"https://github.com/dmnsgn/sublime-cssfmt",
+		"https://github.com/fisker/rem-unit"
 	]
 }
