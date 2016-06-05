@@ -81,6 +81,7 @@
 		"SublimeLinter-coffee",
 		"SublimeLinter-coffeelint",
 		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-contrib-htmlhint",
 		"SublimeLinter-contrib-sass-lint",
 		"SublimeLinter-contrib-scss-lint",
 		"SublimeLinter-contrib-standard",

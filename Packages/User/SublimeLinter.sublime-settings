@@ -31,6 +31,11 @@
                 "args": [],
                 "excludes": []
             },
+            "htmlhint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
             "htmltidy": {
                 "@disable": true,
                 "args": [],
