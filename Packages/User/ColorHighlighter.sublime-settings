@@ -1,5 +1,5 @@
 {
     "enabled": true,
-    "ha_style": "filled",
+    "ha_style": "underlined_solid", //underlined filled text outlined underlined_solid underlined_strippled underlined_squiggly
     "icons": false
 }
