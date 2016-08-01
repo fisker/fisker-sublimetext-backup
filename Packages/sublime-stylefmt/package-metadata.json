@@ -1,1 +1,1 @@
-{"dependencies": [], "description": "Sublime Text plugin for Stylefmt", "platforms": ["*"], "url": "https://github.com/dmnsgn/sublime-stylefmt", "version": "2016.06.29.11.01.24", "sublime_text": "*"}
+{"dependencies": [], "sublime_text": "*", "platforms": ["*"], "description": "Sublime Text plugin for Stylefmt", "version": "2016.07.26.14.28.04", "url": "https://github.com/dmnsgn/sublime-stylefmt"}

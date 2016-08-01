@@ -111,8 +111,8 @@ bool mdpopups.is_popup_visible
     | --------- | ---- | -------- | ------- | ----------- |
     | view | sublime.View | Yes | | A Sublime Text view object. |
 
-    !!! hint "New"
-        Added in `1.6.0`.
+    !!! hint "New 1.6.0"
+        Feature added in `1.6.0`.
 
 ### add_phantom
 int mdpopups.add_phantom
@@ -146,8 +146,8 @@ int mdpopups.add_phantom
 
     Also, do not try to override the style of existing base classes and elements with plugin injection, but use custom plugin classes so that you will only target what your plugin has specifically added special classes to.
 
-    !!! hint "New"
-        Added in `1.6.0`.
+    !!! hint "New 1.6.0"
+        Feature added in `1.6.0`.
 
 
 ### erase_phantoms
@@ -160,8 +160,8 @@ mdpopups.erase_phantoms
     | view | sublime.View | Yes | | A Sublime Text view object. |
     | key | string | Yes | | A key that is associated with phantoms.  Multiple phantoms can share the same key, but each phantom will have its own id. |
 
-    !!! hint "New"
-        Added in `1.6.0`.
+    !!! hint "New 1.6.0"
+        Feature added in `1.6.0`.
 
 ### erase_phantom_by_id
 mdpopups.erase_phantom_by_id
@@ -173,8 +173,8 @@ mdpopups.erase_phantom_by_id
     | view | sublime.View | Yes | | A Sublime Text view object. |
     | pid | string | Yes | | The id associated with a single phantom.  Multiple phantoms can share the same key, but each phantom will have its own id. |
 
-    !!! hint "New"
-        Added in `1.6.0`.
+    !!! hint "New 1.6.0"
+        Feature dded in `1.6.0`.
 
 ### query_phantom
 [sublime.Region] mdpopups.query_phantom
@@ -186,8 +186,8 @@ mdpopups.erase_phantom_by_id
     | view | sublime.View | Yes | | A Sublime Text view object. |
     | pid | int | Yes | | The id associated with a single phantom.  Multiple phantoms can share the same key, but each phantom will have its own id. |
 
-    !!! hint "New"
-        Added in `1.6.0`.
+    !!! hint "New 1.6.0"
+        Feature added in `1.6.0`.
 
 ### query_phantoms
 [sublime.Region] mdpopups.query_phantoms
@@ -199,8 +199,8 @@ mdpopups.erase_phantom_by_id
     | view | sublime.View | Yes | | A Sublime Text view object. |
     | pids | [int] | Yes | | The id associated with a single phantom.  Multiple phantoms can share the same key, but each phantom will have its own id. |
 
-    !!! hint "New"
-        Added in `1.6.0`.
+    !!! hint "New 1.6.0"
+        Feature added in `1.6.0`.
 
 ### class Phantom
 mdpopups.Phantoms
@@ -227,8 +227,8 @@ mdpopups.Phantoms
     | css | string | Additional CSS that will be injected. |
     | on_navigate | function | Callback that receives one variable `href`. |
 
-    !!! hint "New"
-        Added in `1.6.1`.
+    !!! hint "New 1.6.1"
+        Feature added in `1.6.1`.
 
 ### class PhantomSet
 mdpopups.PhantomsSet
@@ -250,8 +250,8 @@ mdpopups.PhantomsSet
         | --------- | ---- | -------- | ------- | ----------- |
         | new_phantoms | [[mdpopups.Phantom](#class-phantom)] | Yes | | A list of mdpopup phantoms (don't use sublime.Phantoms). |
 
-    !!! hint "New"
-        Added in `1.6.1`.
+    !!! hint "New 1.6.1"
+        Feature added in `1.6.1`.
 
 ### clear_cache
 mdpopups.clear_cache
@@ -270,7 +270,7 @@ mdpopups.md2html
 
 
 ### color_box
-mdpopups.color_box
+string mdpopups.color_box
 : 
     Generates a color preview box image encoded in base64 and formated to be inserted right in your your Markdown or HTML code as an `img` tag.
 
@@ -286,6 +286,89 @@ mdpopups.color_box
     | max_colors | int | No | 5 | Max number of colors that will be evaluated in the `colors` parameter.  Multiple colors are used to to create palette boxes showing multiple colors lined up horizontally. |
     | alpha | bool | No | False | Will create color box images with a real alpha channel instead of simulating one with a checkered background. |
     | border_map | int | No | 0xF | A mapping of which borders to show.  Where `0x1` is `TOP`, `0x2` is `LEFT`, `0x4` is `BOTTOM`, `0x8` is `RIGHT`.  Map flags can be accessed via `mdpopups.colorbox.TOP` etc. |
+
+### color_box_raw
+bytes mdpopups.color_box
+: 
+    Generates a color preview box image and returns the raw byte string of the image.
+
+    | Parameter | Type | Required | Default | Description |
+    | --------- | ---- | -------- | ------- | ----------- |
+    | colors | [string] | Yes | | A list of color strings formatted as `#RRGGBBAA` where `R` is the red channel, `G` is the green channel, `B` is the blue channel, and `A` is the alpha channel. |
+    | border | string | Yes | | The color for the color box border.  Input is a RGB color formatted as `#RRGGBB`. |
+    | border2 | string | No | None | The optional secondary border color.  This is great if you are going to have it on a light and dark backgrounds.  You can use a double border so the color stands out regardless of the background.  Input is a RGB color formatted as `#RRGGBB`. |
+    | height | int | No | 32 | Height of color box. |
+    | width | int | No | 32 | Width of color box. |
+    | border_size | int | No | 1 | Width of the color box border.  If using `border2`, the value should be set to at least 2 to see both colors. |
+    | check_size | int | No | 4 | Size of checkered box squares used for the background of transparent colors. |
+    | max_colors | int | No | 5 | Max number of colors that will be evaluated in the `colors` parameter.  Multiple colors are used to to create palette boxes showing multiple colors lined up horizontally. |
+    | alpha | bool | No | False | Will create color box images with a real alpha channel instead of simulating one with a checkered background. |
+    | border_map | int | No | 0xF | A mapping of which borders to show.  Where `0x1` is `TOP`, `0x2` is `LEFT`, `0x4` is `BOTTOM`, `0x8` is `RIGHT`.  Map flags can be accessed via `mdpopups.colorbox.TOP` etc. |
+
+    !!! hint "New 1.7.0"
+        Feature dded in `1.7.0`.
+
+### tint
+string mdpopups.tint
+: 
+    Takes a either a path to an png or a byte string of a png and tints it with a specific color and returns a string containing the base64 encoded png in an HTML element.
+
+    | Parameter | Type | Required | Default | Description |
+    | --------- | ---- | -------- | ------- | ----------- |
+    | img | string/bytes | Yes | | Either a string in the form `Packages/Package/resource.png` or a byte string of a png image. |
+    | color | string | Yes | | A string in the form of `#RRGGBB` or `#RRGGBBAA` (alpha layer will be stripped and ignored and is only allowed to make it easy to pass in colors from a color scheme). |
+    | opacity | int | No | 255 | An integer value between 0 - 255 that specifies the opacity of the tint. |
+    | height | int | No | None | Height that should be specified in the return HTML element. |
+    | width | int | No | None | Width that should be specified in the return HTML element. |
+
+    !!! hint "New 1.7.0"
+        Feature added in `1.7.0`.
+
+### tint_raw
+bytes mdpopups.tint_raw
+: 
+    Takes a either a path to an png or a byte string of a png and tints it with a specific color and returns a byte string of the modified png.
+
+    | Parameter | Type | Required | Default | Description |
+    | --------- | ---- | -------- | ------- | ----------- |
+    | img | string/bytes | Yes | | Either a string in the form `Packages/Package/resource.png` or a byte string of a png image. |
+    | color | string | Yes | | A string in the form of `#RRGGBB` or `#RRGGBBAA` (alpha layer will be stripped and ignored and is only allowed to make it easy to pass in colors from a color scheme). |
+    | opacity | int | No | 255 | An integer value between 0 - 255 that specifies the opacity of the tint. |
+
+    !!! hint "New 1.7.0"
+        Feature added in `1.7.0`.
+
+### scope2style
+dict mdpopups.scope2style
+: 
+    Takes a sublime scope (complexity doesn't matter), and guesses the style that would be applied.  While there may be untested corner cases with complex scopes where it fails, in general, it is usually accurate.  The returned dictionary is in the form:
+
+    ```python
+    {
+        # Colors will be None if not found,
+        # though usually, even if the scope has no color
+        # it will return the overall theme foreground.
+        #
+        # Background might be None if using `explicit_background`
+        # as it only returns a background if that style specifically
+        # defines a background.
+        "color": "#RRGGBB",
+        "background": "#RRGGBB",
+        # Style will usually be either 'bold', 'italic'.
+        # Multiple styles may be returned 'bold italic' or an empty string ''.
+        "style": 'bold italic'
+    }
+    ```
+
+    | Parameter | Type | Required | Default | Description |
+    | --------- | ---- | -------- | ------- | ----------- |
+    | view | sublime.View |Yes | | Sublime text View object so that the correct color scheme will be searched. |
+    | scope | string | Yes | | The scope to search for. |
+    | selected | bool | No | False | Whether this scope is in a selected state (selected text). |
+    | explicit_background | bool | No | False | Only return a background if one is explicitly defined in the color scheme. |
+
+    !!! hint "New 1.7.0"
+        Feature added in `1.7.0`.
 
 ### syntax_highlight
 mdpopups.syntax_highlight
@@ -312,10 +395,10 @@ mdpopups.get_language_from_view
 All settings for `MdPopups` are placed in Sublime's `Preferences.sublime-settings`.  They are global and work no for whatever plugin uses the MdPopups API.
 
 ### mdpopups.debug
-Turns on debug mode.  This will dump out all sorts of info to the console.  Such as content before parsing to HTML, final HTML output, etc.  This is more useful for plugin developers.
+Turns on debug mode.  This will dump out all sorts of info to the console.  Content before parsing to HTML, final HTML output, traceback from failures, etc..  This is more useful for plugin developers.  It works by specifying an error level.  `0` or `false` would disable it.  1 would trigger on errors. 2 would trigger on warnings and any level below.  3 would be general info (like HTML output) and any level below.
 
 ```js
-    "mdpopups.debug": true,
+    "mdpopups.debug": 1,
 ```
 
 ### mdpopups.disable
@@ -370,6 +453,19 @@ This is a special setting allowing the mapping of personal syntax languages whic
 ```
 
 For a list of all currently supported syntax mappings, see the official [mapping file](https://github.com/facelessuser/sublime-markdown-popups/blob/master/st3/mdpopups/st_mapping.py).
+
+### mdpopups.font_scale
+Sublime currently doesn't account for font scaling.  For example, if you have a 4K monitor on Windows, and you set the OS font scaling to 125% in your system settings, all your font sizes in your popups and phantoms will be approximately 25% too small.  This feature aims to fix this.  By default, mdpopups will try to guess the scaling on Windows, but it can only guess on Windows currently.  If you don't like what it guesses, or you are on Linux or OSX, you can specify a scale here.
+
+All sizes that are run through the `relativesize` filter use the size of the `font_size` variable found in the a file view's settings as the reference.  It seems that this value is closest to a **px** font size.  `mdpopups.font_scale` will only be applied to sizes run through the `relativesize` filter, and I personally recommend using **px** for fonts (or maybe even **pt** as they seemed all right, but I've seen funny things when using **em** sizes even though seem to calculate fine).
+
+Value should be a positive integer or float.  The default value is `0`. On Windows, if you set it to `0`, it will guess your font scale.  Setting this value to `1` effectively disables it and since you are using a scale of one, no adjustments are made.  On Linux and OSX, either `0` or `1` effectively disables the feature.
+
+So if your OS font scaling is set to 125%, you would probably want to set the scale factor to `1.25` to increase your popup/phantom font sizes to 125% from its calculated 100%.
+
+```js
+'mdpopups.font_scale': 0,
+```
 
 ## Syntax Highlighting
 MdPopups has two syntax highlighting methods: one is Pygments, the other is Sublimes native syntax highlighters.  When developing a plugin, it is wise to test out both as a syntax mapping may be needed for the Sublime Syntax Highlighter; mappings can be added locally and/or to the main repository via pull requests.
@@ -483,6 +579,67 @@ Templates are used so that a user can easily tap into all the colors, color filt
 
 ## CSS Templates
 MdPoups provides a [`base.css`](https://github.com/facelessuser/sublime-markdown-popups/blob/master/css/base.css) that formats the general look of the HTML elements (padding, size, etc.).  On top of that, it provides a [`default.css`](https://github.com/facelessuser/sublime-markdown-popups/blob/master/css/default.css) template which applies more superficial styling such as colors, Pygments themes, etc.  It uses the Jinja2 template environment to give direct access to things like color scheme colors, names, and other useful information.  In general, `default.css` should provide most of what everyone **needs**.  But if you **want** greater control, you can create your own CSS template which MdPopups will use instead of `default.css`.
+
+### Sizes Relative to View's Font Size
+Sizes can be defined relative to the current Sublime file view's font size.  An example would be ensuring font sizes in a popup or phantom match the size of the font in the Sublime Text file view.  The sizes that can be adjusted are `pt`, `em`, `px`.
+
+relativesize
+: 
+    Takes a relative specifier and inserts the size in the provided unit relative to the font size in the current Sublime Text file view. The filter is applied to a string that consists of a leading relative operator (`+`, `-`, or `*`), a positive number, and one of three size types (`em`, `px`, or `pt`). `relativesize` can also take a boolean to turn the the float value into a rounded int.
+
+    | Operator | Description |
+    |----------|-------------|
+    | `+` | Adds the specified value to the current font size. |
+    | `-` | Subtracts the specified value from the current font size. |
+    | `*` | Multiplies the value to the current font size. This allows both dividing and multiplying the font size by a given factor.  To cut in half: `*.5`.  To double the size `*2`. |
+
+    **Example**:
+
+    ```css+jinja
+    h1 { font-size: {{'+5px'|relativesize}}; }
+    h2 { font-size: {{'+4px'|relativesize}}; }
+    h3 { font-size: {{'+3px'|relativesize}}; }
+    h4 { font-size: {{'+2px'|relativesize}}; }
+    h5 { font-size: {{'+1px'|relativesize}}; }
+    h6 { font-size: {{'+0px'|relativesize}}; }
+    ```
+
+    Would become this (assuming a font size of 19px):
+
+    ```css+jinja
+    h1 { font-size: 24px; }
+    h2 { font-size: 23px; }
+    h3 { font-size: 22px; }
+    h4 { font-size: 21px; }
+    h5 { font-size: 20px; }
+    h6 { font-size: 19px; }
+    ```
+
+    **Example - Integer Rounding**
+
+    ```css+jinja
+    ul, ol { padding-left: {{'*.5em'|relativesize(True)}}; }
+    ```
+
+    Would become this (assuming a font size of 19px):
+
+    ```css+jinja
+    ul, ol { padding-left: 1em; }
+    ```
+
+    The conversion factor between **px**, **pt**, and **em** is assummed to be 16px --> 1em --> 12pt.  Whether this is what sublime is actually doing is another question.  We assume that the Sublime `font_size` setting is in **px** as this has given the best overall feel.  **em** are not recommened for font sizes as I've seen some strange behaviour when scaling **em** (even though the numbers seem to calculate correctly).  **em** issues may not exists with elements that are not font, but please report any issues you find.
+
+    !!! hint "New 1.7.0"
+        Added in `1.7.0`.
+
+        This was the `1.7.0` format which was cumbersome: `{{'+5'|relativesize('px')}}`.  In `1.7.1`, it changed, but the old way is still supported.
+
+
+    !!! hint "New 1.7.1"
+        `1.7.1` introduced the more simple format of `{{'+5px'|relativesize}}`.  It is encouraged to adopt this format instead of `1.7.0` format as it will be removed in the future.
+
+    !!! hint "New 1.7.2"
+        Integer rounded added in `1.7.2`.  Rounding not supported in old style call from `1.7.0`.
 
 ### Template Colors
 With the template environment, colors from the current Sublime color scheme can be accessed and manipulated.  Access to the Sublime color scheme styles are done via the `css` filter.
@@ -696,7 +853,7 @@ var.is_popup | var.is_phantom
     {% endif %}
     ```
 
-    !!! hint "New"
+    !!! hint "New 1.6.0"
             Added in `1.6.0`.
 
 var.use_pygments

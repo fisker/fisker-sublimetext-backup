@@ -19,10 +19,11 @@ from .st_clean_css import clean_css
 from .st_pygments_highlight import syntax_hl as pyg_syntax_hl
 from .st_code_highlight import SublimeHighlight
 from .st_mapping import lang_map
+from . import imagetint
 import re
 import os
 
-version_info = (1, 6, 3)
+version_info = (1, 7, 3)
 __version__ = '.'.join([str(x) for x in version_info])
 
 PHANTOM_SUPPORT = int(sublime.version()) >= 3118
@@ -36,17 +37,22 @@ IDK = '''
 '''
 RE_BAD_ENTITIES = re.compile(r'(&(?!amp;|lt;|gt;|nbsp;)(?:\w+;|#\d+;))')
 
+NODEBUG = 0
+ERROR = 1
+WARNING = 2
+INFO = 3
+
 
 def _log(msg):
     """Log."""
 
-    print('MarkdownPopup: %s' % str(msg))
+    print('mdpopups: %s' % str(msg))
 
 
-def _debug(msg):
+def _debug(msg, level):
     """Debug log."""
 
-    if _get_setting('mdpopups.debug', False):
+    if int(_get_setting('mdpopups.debug', NODEBUG)) >= level:
         _log(msg)
 
 
@@ -93,6 +99,8 @@ def _clear_cache():
 
     global _scheme_cache
     global _highlighter_cache
+    global base_css
+    base_css = None
     _scheme_cache = OrderedDict()
     _highlighter_cache = OrderedDict()
 
@@ -135,60 +143,38 @@ def _get_sublime_highlighter(view):
                 _highlighter_cache[scheme] = (obj, time.time())
             except Exception:
                 _log('Failed to get Sublime highlighter object!')
-                _debug(traceback.format_exc())
+                _debug(traceback.format_exc(), ERROR)
                 pass
     return obj
 
 
-def _get_scheme(view, css_type=POPUP):
+def _get_scheme(view):
     """Get the scheme object and user CSS."""
 
     scheme = view.settings().get('color_scheme')
     settings = sublime.load_settings("Preferences.sublime-settings")
     obj = None
-    popup_user_css = ''
-    phantom_user_css = ''
+    user_css = ''
     if scheme is not None:
         if scheme in _scheme_cache:
-            obj, popup_user_css, phantom_user_css, t = _scheme_cache[scheme]
+            obj, user_css, t = _scheme_cache[scheme]
             # Check if cache expired or user changed pygments setting.
             if (
                 _is_cache_expired(t) or
                 obj.variables.get('use_pygments', True) != (not settings.get('mdpopups.use_sublime_highlighter', False))
             ):
                 obj = None
-                popup_user_css = ''
-                phantom_user_css = ''
+                user_css = ''
         if obj is None:
             try:
                 obj = Scheme2CSS(scheme)
                 _prune_cache()
                 user_css = _get_user_css()
-                popup_user_css = obj.apply_template(user_css, POPUP)
-                phantom_user_css = obj.apply_template(user_css, PHANTOM)
-                _scheme_cache[scheme] = (obj, popup_user_css, phantom_user_css, time.time())
+                _scheme_cache[scheme] = (obj, user_css, time.time())
             except Exception:
                 _log('Failed to convert/retrieve scheme to CSS!')
-                _debug(traceback.format_exc())
-    return obj, popup_user_css if css_type == POPUP else phantom_user_css
-
-
-def _get_scheme_css(view, css, css_type=POPUP):
-    """
-    Get css from scheme.
-
-    Retrieve scheme if in cache, or compile CSS
-    if not in cache or entry is expired in cache.
-    """
-
-    obj, user_css = _get_scheme(view, css_type)
-
-    try:
-        return obj.get_css() + obj.apply_template(css, css_type) + user_css if obj is not None else ''
-    except Exception:
-        _log('Failed to retrieve scheme CSS!')
-        _debug(traceback.format_exc())
-        return ''
+                _debug(traceback.format_exc(), ERROR)
+    return obj, user_css
 
 
 def _get_user_css():
@@ -250,17 +236,32 @@ class _MdWrapper(markdown.Markdown):
             except Exception:
                 # We want to gracefully continue even if an extension fails.
                 _log('Failed to load markdown module!')
-                _debug(traceback.format_exc())
+                _debug(traceback.format_exc(), ERROR)
 
         return self
 
 
 def _get_theme(view, css=None, css_type=POPUP):
     """Get the theme."""
+
     global base_css
     if base_css is None:
         base_css = clean_css(sublime.load_resource(BASE_CSS))
-    return base_css + _get_scheme_css(view, clean_css(css) if css else css, css_type)
+    obj, user_css = _get_scheme(view)
+    font_size = view.settings().get('font_size', 12)
+    try:
+        return obj.apply_template(
+            base_css +
+            obj.get_css() +
+            (css if css else '') +
+            user_css,
+            css_type,
+            font_size
+        ) if obj is not None else ''
+    except Exception:
+        _log('Failed to retrieve scheme CSS!')
+        _debug(traceback.format_exc(), ERROR)
+        return ''
 
 
 def _remove_entities(text):
@@ -279,10 +280,10 @@ def _remove_entities(text):
 def _create_html(view, content, md=True, css=None, debug=False, css_type=POPUP):
     """Create html from content."""
 
-    debug = _get_setting('mdpopups.debug', False)
+    debug = _get_setting('mdpopups.debug', NODEBUG)
     if debug:
-        _log('=====Content=====')
-        _log(content)
+        _debug('=====Content=====', INFO)
+        _debug(content, INFO)
 
     if css is None or not isinstance(css, str):
         css = ''
@@ -290,15 +291,15 @@ def _create_html(view, content, md=True, css=None, debug=False, css_type=POPUP):
     style = _get_theme(view, css, css_type)
 
     if debug:
-        _log('=====CSS=====')
-        _log(style)
+        _debug('=====CSS=====', INFO)
+        _debug(style, INFO)
 
     if md:
         content = md2html(view, content)
 
     if debug:
-        _log('=====HTML OUTPUT=====')
-        _log(content)
+        _debug('=====HTML OUTPUT=====', INFO)
+        _debug(content, INFO)
 
     html = "<style>%s</style>" % (style)
     html += _remove_entities(content)
@@ -371,6 +372,44 @@ def color_box(
     )
 
 
+def color_box_raw(
+    colors, border="#000000ff", border2=None, height=32, width=32,
+    border_size=1, check_size=4, max_colors=5, alpha=False, border_map=0xF
+):
+    """Color box raw."""
+
+    return colorbox.color_box_raw(
+        colors, border, border2, height, width,
+        border_size, check_size, max_colors, alpha, border_map
+    )
+
+
+def tint(img, color, opacity=255, height=None, width=None):
+    """Tint the image."""
+
+    if isinstance(img, str):
+        try:
+            img = sublime.load_binary_resource(img)
+        except Exception:
+            _log('Could not open binary file!')
+            _debug(traceback.format_exc(), ERROR)
+            return ''
+    return imagetint.tint(img, color, opacity, height, width)
+
+
+def tint_raw(img, color, opacity=255):
+    """Tint the image."""
+
+    if isinstance(img, str):
+        try:
+            img = sublime.load_binary_resource(img)
+        except Exception:
+            _log('Could not open binary file!')
+            _debug(traceback.format_exc(), ERROR)
+            return ''
+    return imagetint.tint_raw(img, color, opacity)
+
+
 def get_language_from_view(view):
     """Guess current language from view."""
 
@@ -399,9 +438,25 @@ def syntax_highlight(view, src, language=None, inline=False):
     except Exception:
         code = src
         _log('Failed to highlight code!')
-        _debug(traceback.format_exc())
+        _debug(traceback.format_exc(), ERROR)
 
     return code
+
+
+def scope2style(view, scope, selected=False, explicit_background=False):
+    """Convert the scope to a style."""
+
+    style = {
+        'color': None,
+        'background': None,
+        'style': ''
+    }
+    obj = _get_scheme(view)[0]
+    style_obj = obj.guess_style(scope, selected, explicit_background)
+    style['color'] = style_obj.fg_simulated
+    style['background'] = style_obj.bg_simulated
+    style['style'] = style_obj.style
+    return style
 
 
 def clear_cache():
@@ -421,7 +476,7 @@ def update_popup(view, content, md=True, css=None):
 
     disabled = _get_setting('mdpopups.disable', False)
     if disabled:
-        _debug('Popups disabled')
+        _debug('Popups disabled', WARNING)
         return
 
     try:
@@ -442,7 +497,7 @@ def show_popup(
 
     disabled = _get_setting('mdpopups.disable', False)
     if disabled:
-        _debug('Popups disabled')
+        _debug('Popups disabled', WARNING)
         return
 
     if not _can_show(view, location):
@@ -472,7 +527,7 @@ if PHANTOM_SUPPORT:
 
         disabled = _get_setting('mdpopups.disable', False)
         if disabled:
-            _debug('Phantoms disabled')
+            _debug('Phantoms disabled', WARNING)
             return
 
         try:

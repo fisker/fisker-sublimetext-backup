@@ -1,1 +1,1 @@
-{"url": "https://github.com/uipoet/sublime-jshint", "dependencies": [], "version": "2014.02.10.09.46.31", "platforms": ["*"], "sublime_text": "*", "description": "JSHint any JavaScript file in Sublime Text 2"}
+{"dependencies": [], "sublime_text": "*", "platforms": ["*"], "description": "JSHint any JavaScript file in Sublime Text 2", "version": "2016.07.26.21.31.12", "url": "https://github.com/uipoet/sublime-jshint"}

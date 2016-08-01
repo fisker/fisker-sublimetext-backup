@@ -10,15 +10,15 @@
 <key>name</key>
 <string>mon_color</string>
 <key>scope</key>
-<string>mcol_DD880000</string>
+<string>mcol_eeeeeeFF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#DD880000</string>
+<string>#eeeeeeFF</string>
 <key>foreground</key>
-<string>#4C2F00FF</string>
+<string>#101010FF</string>
 <key>caret</key>
-<string>#4C2F00FF</string>
+<string>#101010FF</string>
 </dict>
 </dict>
 
@@ -26,15 +26,15 @@
 <key>name</key>
 <string>mon_text_color</string>
 <key>scope</key>
-<string>mcol_text_DD880000</string>
+<string>mcol_text_eeeeeeFF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
 <string>#04202aFF</string>
 <key>foreground</key>
-<string>#DD880000</string>
+<string>#eeeeeeFF</string>
 <key>caret</key>
-<string>#4C2F00FF</string>
+<string>#101010FF</string>
 </dict>
 </dict>
 
@@ -42,15 +42,15 @@
 <key>name</key>
 <string>mon_color</string>
 <key>scope</key>
-<string>mcol_DDBBFFFF</string>
+<string>mcol_ccccccFF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#DDBBFFFF</string>
+<string>#ccccccFF</string>
 <key>foreground</key>
-<string>#210043FF</string>
+<string>#323232FF</string>
 <key>caret</key>
-<string>#210043FF</string>
+<string>#323232FF</string>
 </dict>
 </dict>
 
@@ -58,47 +58,15 @@
 <key>name</key>
 <string>mon_text_color</string>
 <key>scope</key>
-<string>mcol_text_DDBBFFFF</string>
+<string>mcol_text_ccccccFF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
 <string>#04202aFF</string>
 <key>foreground</key>
-<string>#DDBBFFFF</string>
+<string>#ccccccFF</string>
 <key>caret</key>
-<string>#210043FF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_color</string>
-<key>scope</key>
-<string>mcol_332288FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#332288FF</string>
-<key>foreground</key>
-<string>#8877DDFF</string>
-<key>caret</key>
-<string>#8877DDFF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_text_color</string>
-<key>scope</key>
-<string>mcol_text_332288FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#04202aFF</string>
-<key>foreground</key>
-<string>#332288FF</string>
-<key>caret</key>
-<string>#8877DDFF</string>
+<string>#323232FF</string>
 </dict>
 </dict>
 
@@ -117,6 +85,26 @@
 				<string>#0A2933</string>
 				<key>selection</key>
 				<string>#0A2933</string>
+
+				<key>popupCss</key>
+				<string>
+					html {
+						background-color: #063342;
+						color: #839496;
+					}
+					a {
+						color: #268BD2;
+					}
+					.error, .deleted {
+						color: #D33682;
+					}
+					.success, .inserted {
+						color: #738A05;
+					}
+					.warning, .modified {
+						color: #B58900;
+					}
+				</string>
 			</dict>
 		</dict>
 		<dict>

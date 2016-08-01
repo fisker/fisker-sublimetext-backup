@@ -2,10 +2,10 @@
 Sublime tooltip color box.
 
 Licensed under MIT
-Copyright (c) 2015 Isaac Muse <isaacmuse@gmail.com>
+Copyright (c) 2015 - 2016 Isaac Muse <isaacmuse@gmail.com>
 """
 from .png import Writer
-from ..rgba import RGBA
+from .rgba import RGBA
 import base64
 import io
 
@@ -73,7 +73,7 @@ def get_border_size(dir, border_map):
     return size
 
 
-def color_box(
+def color_box_raw(
     colors, border="#000000", border2=None, height=32, width=32,
     border_size=1, check_size=4, max_colors=5, alpha=False, border_map=0xF
 ):
@@ -231,14 +231,21 @@ def color_box(
             p.append(row)
 
     # Create bytes buffer for png
-    f = io.BytesIO()
+    with io.BytesIO() as f:
 
-    # Write out png
-    img = Writer(width, height, alpha=alpha)
-    img.write(f, p)
+        # Write out png
+        img = Writer(width, height, alpha=alpha)
+        img.write(f, p)
 
-    # Read out png bytes and base64 encode
-    f.seek(0)
+        # Read out png bytes and base64 encode
+        f.seek(0)
+
+        return f.read()
+
+
+def color_box(*args, **kwargs):
+    """Generate palette preview and base64 encode it."""
+
     return "<img src=\"data:image/png;base64,%s\">" % (
-        base64.b64encode(f.read()).decode('ascii')
+        base64.b64encode(color_box_raw(*args, **kwargs)).decode('ascii')
     )

@@ -26,7 +26,7 @@
 
   // A comma-separated list of scopes where Emmet’s Tab key
   // abbreviation expander should be disabled
-  "disable_tab_abbreviations_for_scopes": "",
+  "disable_tab_abbreviations_for_scopes": "source.css",
 
   // A regexp for scope name: if it matches, Tab handler won’t work
   // The reason to use this preference is that ST2 has buggy scope matcher
