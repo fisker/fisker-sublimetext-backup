@@ -1,0 +1,50 @@
+[
+  {
+    "caption": "JavaScript Completions Tools",
+    "mnemonic": "J",
+    "id": "javascript_completions_tools",
+    "children":[
+      {
+        "caption": "Search on \"Can I use\" list",
+        "command": "can_i_use",
+        "args": {"from": "main-menu"}
+      },
+      { "caption": "-" },
+      {
+        "caption": "JSDoc",
+        "id": "jsdoc",
+        "children": [
+          {
+            "caption": "Generate Documentation",
+            "command": "generate_jsdoc"
+          },
+          {
+            "caption": "Add jsdoc-settings.json to the current project folder",
+            "command": "add_jsdoc_settings_to_curr_project_folder"
+          },
+          { "caption": "-" },
+          {
+            "caption": "Go to JSDoc Site",
+            "command": "open_url",
+            "args": {"url": "http://usejsdoc.org/"}
+          }
+        ]
+      },
+      { "caption": "-" },
+      {
+        "caption": "Go to Node.js site",
+        "command": "open_url",
+        "args": {
+            "url": "https://nodejs.org",
+            "platform": "Windows"
+        }
+      },
+      { "caption": "-" },
+      {
+        "caption": "GitHub Project",
+        "command": "open_url",
+        "args": {"url": "https://github.com/pichillilorenzo/JavaScript-Completions"}
+      }
+    ]
+  }
+]

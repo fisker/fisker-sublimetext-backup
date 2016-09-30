@@ -10,15 +10,15 @@
 <key>name</key>
 <string>mon_color</string>
 <key>scope</key>
-<string>mcol_eeeeeeFF</string>
+<string>mcol_3D8EB9FF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#eeeeeeFF</string>
+<string>#3D8EB9FF</string>
 <key>foreground</key>
-<string>#101010FF</string>
+<string>#122C39FF</string>
 <key>caret</key>
-<string>#101010FF</string>
+<string>#122C39FF</string>
 </dict>
 </dict>
 
@@ -26,15 +26,15 @@
 <key>name</key>
 <string>mon_text_color</string>
 <key>scope</key>
-<string>mcol_text_eeeeeeFF</string>
+<string>mcol_text_3D8EB9FF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
 <string>#04202aFF</string>
 <key>foreground</key>
-<string>#eeeeeeFF</string>
+<string>#3D8EB9FF</string>
 <key>caret</key>
-<string>#101010FF</string>
+<string>#122C39FF</string>
 </dict>
 </dict>
 
@@ -42,15 +42,15 @@
 <key>name</key>
 <string>mon_color</string>
 <key>scope</key>
-<string>mcol_ccccccFF</string>
+<string>mcol_f64747FF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#ccccccFF</string>
+<string>#f64747FF</string>
 <key>foreground</key>
-<string>#323232FF</string>
+<string>#B80808FF</string>
 <key>caret</key>
-<string>#323232FF</string>
+<string>#B80808FF</string>
 </dict>
 </dict>
 
@@ -58,15 +58,15 @@
 <key>name</key>
 <string>mon_text_color</string>
 <key>scope</key>
-<string>mcol_text_ccccccFF</string>
+<string>mcol_text_f64747FF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
 <string>#04202aFF</string>
 <key>foreground</key>
-<string>#ccccccFF</string>
+<string>#f64747FF</string>
 <key>caret</key>
-<string>#323232FF</string>
+<string>#B80808FF</string>
 </dict>
 </dict>
 
@@ -85,26 +85,6 @@
 				<string>#0A2933</string>
 				<key>selection</key>
 				<string>#0A2933</string>
-
-				<key>popupCss</key>
-				<string>
-					html {
-						background-color: #063342;
-						color: #839496;
-					}
-					a {
-						color: #268BD2;
-					}
-					.error, .deleted {
-						color: #D33682;
-					}
-					.success, .inserted {
-						color: #738A05;
-					}
-					.warning, .modified {
-						color: #B58900;
-					}
-				</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1968,16 +1948,6 @@
 		</dict>
 	<dict>
             <key>name</key>
-            <string>SublimeLinter Error</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.error</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#D02000</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
             <string>SublimeLinter Warning</string>
             <key>scope</key>
             <string>sublimelinter.mark.warning</string>
@@ -1985,6 +1955,16 @@
             <dict>
                 <key>foreground</key>
                 <string>#DDB700</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Error</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.error</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#D02000</string>
             </dict>
         </dict><dict>
             <key>name</key>

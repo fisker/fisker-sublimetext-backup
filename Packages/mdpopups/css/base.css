@@ -1,39 +1,64 @@
 /* Html fake border color */
 /* Defines the general look of the font and provides a little margin. */
-body {
-    color: black;
-    background-color: white;
-    margin: 1px;
-    font-size: {{'+0px'|relativesize}};
-    padding: 0.2em;
+/* TODO: next beta remove checks for 3119. */
+{%- if var.default_formatting %}
+{%- if var.sublime_version < 3119 %}
+{{'Packages/mdpopups/css/base-legacy.css'|getcss}}
+{%- else %}
+html, body { padding: 0; margin: 0; }
+div.mdpopups {
+  display: block;
+  margin: 0;
+  padding: {% if var.is_popup %}0.2rem{% else %}0{% endif %};
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
+.mdpopups div { display: block; }
 /* Headers */
-h1 { font-size: {{'+5px'|relativesize}}; }
-h2 { font-size: {{'+4px'|relativesize}}; }
-h3 { font-size: {{'+3px'|relativesize}}; }
-h4 { font-size: {{'+2px'|relativesize}}; }
-h5 { font-size: {{'+1px'|relativesize}}; }
-h6 { font-size: {{'+0px'|relativesize}}; }
-h1, h2, h3, h4, h5, h6 { margin-top: 0.2em; margin-bottom: 0.2em; }
+.mdpopups h1 { font-size: 1.5rem; }
+.mdpopups h2 { font-size: 1.4rem; }
+.mdpopups h3 { font-size: 1.3rem; }
+.mdpopups h4 { font-size: 1.2rem; }
+.mdpopups h5 { font-size: 1.1rem; }
+.mdpopups h6 { font-size: 1rem; }
+.mdpopups h1, .mdpopups h2, .mdpopups h3, .mdpopups h4, .mdpopups h5, .mdpopups h6 {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
 /* Blockquote support. */
-blockquote { display: block; font-style: italic; }
+.mdpopups blockquote { display: block; font-style: italic; }
 /* Horizontal rule support. */
-hr { display: block; padding: 1px; margin: 1em 1em; }
+.mdpopups hr {
+    display: block;
+    padding: 1px;
+    margin: 1rem;
+}
 /* Description list support */
-dl { display: block; }
-dt { display: block; font-style: italic; font-weight: bold; margin-bottom: 0.5em; }
-dd { display: block; margin-left: 1.5em; margin-bottom: 0.5em; }
+.mdpopups dl { display: block; }
+.mdpopups dt {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.mdpopups dd {
+    display: block;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 /* Preformatted block */
-pre { display: block; }
+.mdpopups pre { display: block; }
 /* Blocks */
-blockquote, ol, ul, dl, p, div {
+.mdpopups blockquote, .mdpopups ol, .mdpopups ul, .mdpopups dl, .mdpopups p, .mdpopups div {
     padding: 0;
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     margin-left: 0;
     margin-right: 0;
 }
-ul, ol { padding-left: 2.0em; }
+.mdpopups ul, .mdpopups ol { padding-left: 2rem; }
 /* Special classes */
-.highlight { padding: 0.5em; }
-.admonition { padding: 0.5em; }
+.mdpopups .highlight { padding: 0.5rem; }
+.mdpopups .admonition { padding: 0.5rem; }
+{% endif %}
+{% endif %}
