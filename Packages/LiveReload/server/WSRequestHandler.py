@@ -8,9 +8,9 @@ except ImportError:
 import LiveReload
 
 try:
-    import urlparse
+    from urlparse import urlparse
 except ImportError:
-    import urllib.parse as urlparse
+    from urllib.parse import urlparse
 
 import sys
 
@@ -42,7 +42,7 @@ class WSRequestHandler(SimpleHTTPRequestHandler):
             self.last_code = 101
             self.last_message = '101 Switching Protocols'
         else:
-            req = urlparse.urlparse(self.path)
+            req = urlparse(self.path)
             _file = LiveReload.API.has_file(req.path)
             _httpcallback = LiveReload.API.has_callback(req.path)
             if _httpcallback:
