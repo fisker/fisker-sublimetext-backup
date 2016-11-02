@@ -3,7 +3,7 @@
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
-	"font_size": 14,
+	"font_size": 13,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -11,12 +11,16 @@
 		"CSS Completions",
 		"CSS Snippets",
 		"JavaScript",
+		"JavaScript Completions",
+		"JSHint",
 		"LiveReload",
 		"LiveStyle",
 		"Markdown",
+		"rem-unit",
 		"StandardFormat",
 		"SublimeLinter-contrib-standard",
 		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
 		"Vintage"
 	],
 	"tab_size": 2,

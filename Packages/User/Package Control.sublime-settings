@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"JavaScript Completions"
 	],
 	"installed_packages":
 	[
@@ -42,7 +43,6 @@
 		"Jade Build",
 		"Jade Snippets",
 		"JavaScript & NodeJS Snippets",
-		"JavaScript Completions",
 		"JavaScript Snippets",
 		"JavaScriptNext - ES6 Syntax",
 		"jQuery",
