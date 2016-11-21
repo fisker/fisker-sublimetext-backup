@@ -7,6 +7,7 @@
 	[
 		"Alignment",
 		"All Autocomplete",
+		"Auto Close HTML Tags",
 		"AutoFileName",
 		"Autoprefixer",
 		"Babel",
@@ -20,6 +21,7 @@
 		"Console API Snippets (JavaScript)",
 		"ConvertToUTF8",
 		"CSS Completions",
+		"CSS Extended Completions",
 		"CSS Snippets",
 		"CSS3",
 		"CSScomb",
@@ -38,6 +40,7 @@
 		"HTML5",
 		"HTMLAttributes",
 		"HTMLBeautify",
+		"imgHolder",
 		"Jade",
 		"Jade Build",
 		"Jade Snippets",
@@ -100,6 +103,7 @@
 		"Syntax Highlighting for Sass",
 		"Tag",
 		"Terminal",
+		"Theme - Spaceblack",
 		"Tomorrow Color Schemes"
 	],
 	"repositories":

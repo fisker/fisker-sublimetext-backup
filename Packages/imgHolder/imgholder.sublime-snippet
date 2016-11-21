@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[http://placeholder.cn/${1:600x300}}]]></content>
+	<tabTrigger>imholder, placeholder</tabTrigger>
+	<description>add img placeholder</description>
+	<!-- <scope>text.html,text.css,text.css.less,text.sass</scope> -->
+</snippet>

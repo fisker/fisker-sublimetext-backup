@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Spaceblack-alt (SL).tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
@@ -11,6 +11,8 @@
 		"CSS",
 		"CSS Completions",
 		"CSS Snippets",
+		"HTML Boilerplate",
+		"HTML Snippets",
 		"JavaScript",
 		"jQuery",
 		"jQuery Snippets pack",
