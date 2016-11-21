@@ -1,8 +1,8 @@
 {
-    "enable_key_map": false,
+    "enable_key_map": true,
     "enable_on_hover_description": true,
     "completion_active_list": {
-        "jQuery": false,
+        "jQuery": true,
         "description-jQuery": false,
         "NativeScript": true,
         "description-NativeScript": false,

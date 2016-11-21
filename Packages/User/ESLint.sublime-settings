@@ -21,5 +21,5 @@
   // On OSX, for example: "/usr/local/lib/node_modules"
   // Example for nodebrew: "$HOME/.nodebrew/current/lib/node_modules"
   // Example for Windows: "%APPDATA%/npm/node_modules"
-  "node_modules_path": "%APPDATA%/npm/node_modules"
+  "node_modules_path": "D:/npm/node_modules"
 }

@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"JavaScript Completions"
 	],
 	"installed_packages":
 	[
@@ -43,6 +42,7 @@
 		"Jade Build",
 		"Jade Snippets",
 		"JavaScript & NodeJS Snippets",
+		"JavaScript Completions",
 		"JavaScript Snippets",
 		"JavaScriptNext - ES6 Syntax",
 		"jQuery",
@@ -54,6 +54,7 @@
 		"LiveReload",
 		"LiveStyle",
 		"MarieAssembly",
+		"Markdown Extended",
 		"Markdown Preview",
 		"MarkdownEditing",
 		"NCL",
@@ -86,6 +87,7 @@
 		"SublimeLinter-contrib-pug-lint",
 		"SublimeLinter-contrib-sass-lint",
 		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-contrib-semistandard",
 		"SublimeLinter-contrib-standard",
 		"SublimeLinter-contrib-stylelint",
 		"SublimeLinter-csslint",
@@ -97,7 +99,8 @@
 		"SyncedSidebarBg",
 		"Syntax Highlighting for Sass",
 		"Tag",
-		"Terminal"
+		"Terminal",
+		"Tomorrow Color Schemes"
 	],
 	"repositories":
 	[

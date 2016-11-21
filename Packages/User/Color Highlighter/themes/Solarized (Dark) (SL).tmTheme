@@ -10,15 +10,15 @@
 <key>name</key>
 <string>mon_color</string>
 <key>scope</key>
-<string>mcol_202A31FF</string>
+<string>mcol_7FF5EC54</string>
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#202A31FF</string>
+<string>#7FF5EC54</string>
 <key>foreground</key>
-<string>#CDD8DFFF</string>
+<string>#097F77FF</string>
 <key>caret</key>
-<string>#CDD8DFFF</string>
+<string>#097F77FF</string>
 </dict>
 </dict>
 
@@ -26,47 +26,15 @@
 <key>name</key>
 <string>mon_text_color</string>
 <key>scope</key>
-<string>mcol_text_202A31FF</string>
+<string>mcol_text_7FF5EC54</string>
 <key>settings</key>
 <dict>
 <key>background</key>
 <string>#04202aFF</string>
 <key>foreground</key>
-<string>#202A31FF</string>
+<string>#7FF5EC54</string>
 <key>caret</key>
-<string>#CDD8DFFF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_color</string>
-<key>scope</key>
-<string>mcol_ffffffFF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#ffffffFF</string>
-<key>foreground</key>
-<string>#000000FF</string>
-<key>caret</key>
-<string>#000000FF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_text_color</string>
-<key>scope</key>
-<string>mcol_text_ffffffFF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#04202aFF</string>
-<key>foreground</key>
-<string>#ffffffFF</string>
-<key>caret</key>
-<string>#000000FF</string>
+<string>#097F77FF</string>
 </dict>
 </dict>
 
@@ -1948,6 +1916,16 @@
 		</dict>
 	<dict>
             <key>name</key>
+            <string>SublimeLinter Error</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.error</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#D02000</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
             <string>SublimeLinter Gutter Mark</string>
             <key>scope</key>
             <string>sublimelinter.gutter-mark</string>
@@ -1965,16 +1943,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#DDB700</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Error</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.error</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#D02000</string>
             </dict>
         </dict></array>
 	<key>uuid</key>
