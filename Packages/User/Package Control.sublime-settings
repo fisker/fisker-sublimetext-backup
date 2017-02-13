@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"1337 Color Scheme",
 		"Alignment",
 		"All Autocomplete",
 		"Auto Close HTML Tags",
@@ -14,6 +15,7 @@
 		"Babel Snippets",
 		"BracketHighlighter",
 		"Can I Use",
+		"ChannelRepositoryTools",
 		"CodeFormatter",
 		"CoffeeCompile",
 		"Color Highlighter",
@@ -27,6 +29,7 @@
 		"CSScomb",
 		"cssDOC",
 		"DocBlockr",
+		"eCSStractor",
 		"EditorConfig",
 		"Emmet",
 		"ESLint",
@@ -40,7 +43,7 @@
 		"HTML5",
 		"HTMLAttributes",
 		"HTMLBeautify",
-		"imgHolder",
+		"img-placeholder",
 		"Jade",
 		"Jade Build",
 		"Jade Snippets",
@@ -56,10 +59,12 @@
 		"LESS",
 		"LiveReload",
 		"LiveStyle",
+		"Lodash Completions",
 		"MarieAssembly",
 		"Markdown Extended",
 		"Markdown Preview",
 		"MarkdownEditing",
+		"Material Theme",
 		"NCL",
 		"Nettuts+ Fetch",
 		"Package Control",
@@ -103,12 +108,15 @@
 		"Syntax Highlighting for Sass",
 		"Tag",
 		"Terminal",
+		"Theme - Soda",
+		"Theme - Soda SolarizedDark",
 		"Theme - Spaceblack",
 		"Tomorrow Color Schemes"
 	],
 	"repositories":
 	[
 		"https://github.com/dmnsgn/sublime-cssfmt",
-		"https://github.com/fisker/rem-unit"
+		"https://github.com/fisker/rem-unit",
+		"https://github.com/fisker/img-placeholder.git"
 	]
 }

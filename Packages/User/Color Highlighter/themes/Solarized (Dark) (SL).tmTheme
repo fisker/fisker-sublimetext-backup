@@ -30,6 +30,38 @@
 <key>settings</key>
 <dict>
 <key>background</key>
+<string>#7FF5Ed54</string>
+<key>foreground</key>
+<string>#7FF5EC54</string>
+<key>caret</key>
+<string>#097F77FF</string>
+</dict>
+</dict>
+
+<dict>
+<key>name</key>
+<string>mon_color</string>
+<key>scope</key>
+<string>mcol_7FF5EC54</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#7FF5EC54</string>
+<key>foreground</key>
+<string>#097F77FF</string>
+<key>caret</key>
+<string>#097F77FF</string>
+</dict>
+</dict>
+
+<dict>
+<key>name</key>
+<string>mon_text_color</string>
+<key>scope</key>
+<string>mcol_text_7FF5EC54</string>
+<key>settings</key>
+<dict>
+<key>background</key>
 <string>#04202aFF</string>
 <key>foreground</key>
 <string>#7FF5EC54</string>
@@ -1916,6 +1948,16 @@
 		</dict>
 	<dict>
             <key>name</key>
+            <string>SublimeLinter Warning</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.warning</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#DDB700</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
             <string>SublimeLinter Error</string>
             <key>scope</key>
             <string>sublimelinter.mark.error</string>
@@ -1933,16 +1975,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#FFFFFF</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Warning</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.warning</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#DDB700</string>
             </dict>
         </dict></array>
 	<key>uuid</key>

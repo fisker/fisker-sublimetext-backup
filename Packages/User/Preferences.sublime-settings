@@ -1,13 +1,14 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/Spaceblack-alt (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
-	"font_size": 15,
+	"font_size": 14,
 	"highlight_line": true,
 	"ignored_packages":
 	[
 		"All Autocomplete",
+		"Auto Close HTML Tags",
 		"CSS",
 		"CSS Completions",
 		"CSS Snippets",
@@ -20,7 +21,6 @@
 		"LiveReload",
 		"LiveStyle",
 		"MarkdownEditing",
-		"rem-unit",
 		"SublimeLinter-contrib-standard",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-jshint",

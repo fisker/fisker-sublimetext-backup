@@ -1,6 +1,7 @@
 {
 	"extensions":
 	[
-		"css"
+		"css",
+		"wxss"
 	]
 }
