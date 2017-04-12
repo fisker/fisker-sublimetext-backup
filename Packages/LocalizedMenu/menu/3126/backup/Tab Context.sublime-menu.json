@@ -1,0 +1,37 @@
+[
+    {
+        "caption": "关闭", 
+        "args": {
+            "index": -1, 
+            "group": -1
+        }, 
+        "command": "close_by_index"
+    }, 
+    {
+        "caption": "关闭其它选项卡", 
+        "args": {
+            "index": -1, 
+            "group": -1
+        }, 
+        "command": "close_others_by_index"
+    }, 
+    {
+        "caption": "关闭右侧选项卡", 
+        "args": {
+            "index": -1, 
+            "group": -1
+        }, 
+        "command": "close_to_right_by_index"
+    }, 
+    {
+        "caption": "-"
+    }, 
+    {
+        "caption": "新建文件", 
+        "command": "new_file"
+    }, 
+    {
+        "caption": "打开文件", 
+        "command": "prompt_open_file"
+    }
+]

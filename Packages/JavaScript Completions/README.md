@@ -8,14 +8,45 @@ JavaScript Completions for sublime text
 
 It helps you to write your scripts more quickly with hints and completions.
 
+<h2>Announcement</h2>
+<p>
+
+I'm implementing new features thanks to <strong>Flow</strong> (static type checker from Facebook).
+With it I can implement other <strong>features</strong> and there will be a better <strong>autocomplete</strong>
+(<strong style="text-decoration: underline;">smart autocomplete based on the current context</strong>).
+
+This is in <strong>Beta version</strong> and I published it under another branch:
+<a href="https://github.com/pichillilorenzo/JavaScript-Completions/tree/v3-beta">https://github.com/pichillilorenzo/JavaScript-Completions/tree/v3-beta</a>
+
+but I will move it on a new repository (<strong style="text-decoration: underline;">so it will be a new plugin on Sublime Text</strong>)
+because it will offer not only a better autocomplete but a lot of features about creating, 
+developing and managing javascript projects, such as:
+
+- Cordova projects (run Cordova emulator, build, compile, serve Cordova projects, add plugins and platforms, etc … directly on Sublime Text!)
+- Ionic projects (same as Cordova projects!)
+- Node.js projects
+- Local bookmarks project
+- Show javascript errors with Flow
+- etc, etc …
+
+It will be something like a <strong>JavaScript IDE</strong> on Sublime Text!
+
+It isn’t ready for public testing and there isn’t a documentation at the moment!
+I will let you know the moment I have any news!!
+
+Email me for any questions or doubts about this new project on: <a href="mailto:pichillilorenzo@gmail.com">pichillilorenzo@gmail.com</a>
+
+<strong>Thanks for your support!!!</strong>
+</p>
+
+<hr>
+
 <strong>jQuery</strong> and <strong>NativeScript</strong> completions disabled by default!
 You can enable them on Preferences -> Package Settings -> JavaScript Completions.
 
 <strong>Some features could use npm!</strong>
 
-In Windows you must install it! Download it from [https://nodejs.org](https://nodejs.org).
-
-To OSX and Linux, it will be downloaded automatically with nodejs.
+It will be downloaded automatically with nodejs!
 
 Features list:
 - <a href="#find-javascript-description">"Find JavaScript Description" Feature</a>
@@ -55,13 +86,11 @@ You can ENABLE or DISABLE completions! Just go to Preferences -> Package Setting
 
 <strong>Supported only by Sublime Text 3</strong>
 
-<strong>key-map</strong> of this feature disabled by default!
-
 You can check the description of function/property/method by selecting the word (or, in case, it will take the first word near the blinking cursor) you want find. "right-click" on your mouse and click on "Find JavaScript Description".
 
 It will show a popup with the list of possible descriptions or, in some case, the direct description. 
 
-In case, you can also use "key-map"! Just go to Preferences -> Package Settings -> JavaScript Completions and enable it.
+Key-Map list: Preferences -> Package Settings ->  JavaScript Completions -> Key Bindings - Default.
 
 <img src="https://s17.postimg.io/stsylwwn3/Schermata_2016_09_18_alle_17_41_17.png" alt="example #1 Find JavaScript Description Feature"> 
 
@@ -87,17 +116,9 @@ Example:
 
 <strong>Supported only by Sublime Text 3</strong>
 
-This feature uses node.js (v6.6.0) executable.
+This feature uses node.js installed locally by this plugin.
 
-You can change the node version on Preferences -> Package Settings -> Evaluate JavaScript settings
-
-It will download automaticaly the binary for your OS.
-
-A message will appear on the "status bar" of Sublime Text.
-
-<strong>context menu option</strong> of this feature disabled by default!
-
-<strong>key-map</strong> of this feature disabled by default!
+You can change the path of "node.js" and "npm" on Preferences -> Package Settings ->  JavaScript Completions -> Settings - Default
 
 You can evaluate the entire text selection or the current line! 
 If you select a text region and evaluate it, in the gutter of the editor will appear 2 white dots.
@@ -111,9 +132,7 @@ There are two main mode to evaluate code:
 - [eval](https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_e_eval_script)
 - [print](https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_p_print_script)
 
-To enable this feature on context menu, go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.
-
-In case, you can also use "key-map"! Just go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.
+Key-Map list: Preferences -> Package Settings ->  JavaScript Completions -> Key Bindings - Default.
 
 <img src="https://s17.postimg.io/c7becu3pb/Schermata_2016_09_18_alle_18_07_00.png" alt="example #1 Evaluate JavaScript Feature"> 
 
@@ -132,11 +151,11 @@ You can use this feature in HTML, CSS and JavaScript context!
 
 Just put the cursor on the word you want to check, "right-click" -> <code>"Can I use?"</code> and it will appear an input panel with all items that have a name matching with the word.
 
-You can use key-map: <code>ctrl+alt+w</code>. You can also change it. Just go to Preferences -> Package Settings ->  JavaScript Completions Tools -> Key Bindings - User.
+You can use key-map: <code>ctrl+alt+w</code>. Key-Map list: Preferences -> Package Settings ->  JavaScript Completions -> Key Bindings - Default.
 
 After selecting an item from the list, it will appear a popup with all information from the [http://caniuse.com](http://caniuse.com) support tables.
 
-You can also use the menu <code>JavaScript Completions Tools</code> on the top and select <code>Search on "Can I use" list</code> to search what you want.
+You can find it under <code>"Tools"</code> menu -> <code>"JavaScript Completions"</code> -> <code>Search on "Can I use" list</code>.
 
 Example :
 
@@ -155,35 +174,47 @@ Example :
 
 This feature uses [https://github.com/jsdoc3/jsdoc](https://github.com/jsdoc3/jsdoc) to generate API documentation.
 
-You can find it under <code>"JavaScript Completions Tools"</code> menu -> <code>JSDoc</code>.
+You can find it under <code>"Tools"</code> menu -> <code>"JavaScript Completions"</code>.
 
 There are 2 main menu items:
 - Generate Documentation
-- Add jsdoc-settings.json to the current project folder
+- Add jsdoc configuration file to the current project folder
 
 <strong>These items can be used only with a project folder opened.</strong>
 
 <code>"Generate Documentation"</code> uses the jsdoc command line to generate documentation.
 
-It uses <code>jsdoc-settings.json</code> file for configuration or, alternately, it will use default configuration.
+It uses the defaukt <code>conf.json</code> file for configuration.
 
 The options (with default values) availables are:
 ```json
 {
-  "jsdoc_conf_file": "conf.json",
-  "destination_folder": "out",
-  "display_symbols_access_property": "all",
-  "search_within_subdirectories": false,
-  "encoding_when_reading_all_source_files": "utf-8",
-  "template_path": "",
-  "tutorials_path": "",
-  "include_symbols_marked_with_the_private_tag": false,
-  "pedantic_mode": false,
-  "query_string_to_parse_and_store_in_global_variable": ""
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "source": {
+    "include": [  ],
+    "exclude": [  ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "template": "templates/default",
+    "encoding": "utf8",
+    "destination": "./out/",
+    "recurse": true,
+    "tutorials": ""
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
 }
 ```
 
-<code>"Add jsdoc-settings.json to the current project folder"</code> will add a <code>jsdoc-settings.json</code> file with default values to the current project folder.
+<code>"Add jsdoc configuration file to the current project folder"</code> will add a <code>conf.json</code> file with default values to the current project folder.
 
 How to use JSDoc: [http://usejsdoc.org/](http://usejsdoc.org/)
 
@@ -209,16 +240,12 @@ You can surround code with:
 - for statement
 - try catch statement
 - try catch finally statement
-- Multi-line comment
-- Single-line comment
 
 This option works also on multiple selections at once.
 
 <h4 id="delete-surround">Delete Surrounded</h4>
 
 Options are:
-- Delete multi-line comment
-- Delete single-line comment
 - Strip quoted string
 
 This option works also on multiple selections at once.

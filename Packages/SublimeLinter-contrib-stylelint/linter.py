@@ -20,7 +20,7 @@ from SublimeLinter.lint import NodeLinter
 class Stylelint(NodeLinter):
     """Provides an interface to stylelint."""
 
-    syntax = ('css', 'css3', 'sass', 'scss', 'postcss', 'less', 'sugarss', 'sss')
+    syntax = ('css', 'css3', 'sass', 'scss', 'postcss', 'less', 'sugarss', 'sss', 'vue')
     npm_name = 'stylelint'
     cmd = ('stylelint', '--formatter', 'json', '--stdin', '--stdin-filename', '@')
     version_args = '--version'
@@ -58,17 +58,19 @@ class Stylelint(NodeLinter):
         except:
             yield (match, 0, None, "Error", "", "Output json data error", None)
 
-        if data and 'errored' in data:
+        if data and 'invalidOptionWarnings' in data:
             for option in data['invalidOptionWarnings']:
                 text = option['text']
 
                 yield (True, 0, None, "Error", "", text, None)
 
+        if data and 'deprecations' in data:
             for option in data['deprecations']:
                 text = option['text']
 
                 yield (True, 0, None, "", "Warning", text, None)
 
+        if data and 'warnings' in data:
             for warning in data['warnings']:
                 line = warning['line'] - self.line_col_base[0]
                 col = warning['column'] - self.line_col_base[1]

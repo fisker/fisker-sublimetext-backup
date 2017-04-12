@@ -1,3 +1,5 @@
+import re
+
 class create_class_from_object_literalCommand(sublime_plugin.TextCommand):
   def run(self, edit, **args):
     view = self.view
@@ -15,6 +17,7 @@ class create_class_from_object_literalCommand(sublime_plugin.TextCommand):
         object_literal = item_object_literal.get("region_string_stripped")
         from node.main import NodeJS
         node = NodeJS()
+        object_literal = re.sub(r'[\n\r\t]', ' ', object_literal)
         object_literal = json.loads(node.eval("JSON.stringify("+object_literal+")", "print"))
         object_literal = [(key, json.dumps(value)) for key, value in object_literal.items()]
 
@@ -46,9 +49,20 @@ class create_class_from_object_literalCommand(sublime_plugin.TextCommand):
           js_syntax = Util.add_whitespace_indentation(view, regions, js_syntax)
           view.replace(edit, regions, js_syntax)
 
+  def is_enabled(self, **args) :
+    view = self.view
+    if not Util.selection_in_js_scope(view) :
+      return False
+    selection = view.sel()[0]
+    scope = view.scope_name(selection.begin()).strip()
+    index = Util.split_string_and_find(scope, "meta.object-literal.js")
+    if index < 0 :
+      return False
+    return True
+
   def is_visible(self, **args) :
     view = self.view
-    if Util.split_string_and_find(view.scope_name(0), "source.js") < 0 :
+    if not Util.selection_in_js_scope(view) :
       return False
     selection = view.sel()[0]
     scope = view.scope_name(selection.begin()).strip()

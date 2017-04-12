@@ -1,0 +1,26 @@
+[
+    {
+        "caption": "Windows (CRLF)", 
+        "args": {
+            "type": "windows"
+        }, 
+        "command": "set_line_ending", 
+        "checkbox": true
+    }, 
+    {
+        "caption": "Unix (LF)", 
+        "args": {
+            "type": "unix"
+        }, 
+        "command": "set_line_ending", 
+        "checkbox": true
+    }, 
+    {
+        "caption": "Mac OS X (CR)", 
+        "args": {
+            "type": "cr"
+        }, 
+        "command": "set_line_ending", 
+        "checkbox": true
+    }
+]

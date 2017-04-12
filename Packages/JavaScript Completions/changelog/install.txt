@@ -1,6 +1,37 @@
 JavaScript Completions Package
 ===============================
 
+## ANNOUNCEMENT ##
+==================
+
+I'm implementing new features thanks to Flow (static type checker from Facebook).
+With it I can implement other features and there will be a better autocomplete
+(smart autocomplete based on the current context).
+
+This is in Beta version and I published it on github (same repository but under another branch):
+https://github.com/pichillilorenzo/JavaScript-Completions/tree/v3-beta
+
+but I will move it on a new repository (so it will be a new plugin on Sublime Text)
+because it will offer not only a better autocomplete but a lot of features about creating, 
+developing and managing javascript projects, such as:
+
+- Cordova projects (run Cordova emulator, build, compile, serve Cordova projects, add plugins and platforms, etc … directly on Sublime Text!)
+- Ionic projects (same as Cordova projects!)
+- Node.js projects
+- Local bookmarks project
+- Show javascript errors with Flow
+- etc, etc …
+
+It will be something like a JavaScript IDE on Sublime Text!
+
+It isn’t ready for public testing and there isn’t a documentation at the moment!
+I will let you know the moment I have any news!!
+
+Email me for any questions or doubts about this new project on: pichillilorenzo@gmail.com
+
+Thanks to all your support!!!
+
+
 How To USE
 ==========
 
@@ -12,9 +43,7 @@ jQuery and NativeScript completions disabled by default!
 You can enable them on Preferences -> Package Settings -> JavaScript Completions.
 
 Some features could use npm!
-
-In Windows you must install it! Download it from https://nodejs.org.
-To OSX and Linux, it will be downloaded automatically with nodejs.
+It will be downloaded automatically with nodejs.
 
 Features list:
 - "Find JavaScript Description" Feature
@@ -36,13 +65,11 @@ You can ENABLE or DISABLE completions! Just go to Preferences -> Package Setting
 
 -- Supported only by Sublime Text 3 --
 
-key-map of this feature disabled by default!
-
 You can check the description of function/property/method by selecting the word (or, in case, it will take the first word near the blinking cursor) you want find. 
 "right-click" on your mouse and click on "Find JavaScript Description".
 It will show a popup with the list of possible descriptions or, in some case, the direct description. 
 
-In case, you can also use "key-map"! Just go to Preferences -> Package Settings -> JavaScript Completions and enable it.
+Key-Map list: Preferences -> Package Settings ->  JavaScript Completions -> Key Bindings - Default.
 
 "On Hover Description" Feature
 ==============================
@@ -61,14 +88,9 @@ Just put the cursor over a name of a function, property or constructor and it wi
 
 -- Supported only by Sublime Text 3 --
 
-This feature uses node.js (v6.6.0) executable.
-You can change the node version on Preferences -> Package Settings -> Evaluate JavaScript settings
+This feature uses node.js installed locally by this plugin.
 
-It will download automaticaly the binary for your OS.
-A message will appear on the "status bar" of Sublime Text.
-
-context menu option of this feature disabled by default!
-key-map of this feature disabled by default!
+You can change the path of "node.js" and "npm" on Preferences -> Package Settings ->  JavaScript Completions -> Settings - Default
 
 You can evaluate the entire text selection or the current line! 
 If you select a text region and evaluate it, in the gutter of the editor will appear 2 white dots.
@@ -82,8 +104,7 @@ There are two main mode to evaluate code:
 - eval, https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_e_eval_script
 - print, https://nodejs.org/dist/latest-v6.x/docs/api/cli.html#cli_p_print_script
 
-To enable this feature on context menu, go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.
-In case, you can also use "key-map"! Just go to Preferences -> Package Settings -> Evaluate JavaScript and enable it.
+Key-Map list: Preferences -> Package Settings ->  JavaScript Completions -> Key Bindings - Default.
 
 
 "Can I use?" Feature
@@ -96,9 +117,9 @@ Thanks to @Fyrd.
 
 You can use this feature in HTML, CSS and JavaScript context!
 Just put the cursor on the word you want to check, "right-click" -> "Can I use?" and it will appear an input panel with all items that have a name matching with the word.
-You can use key-map: ctrl+alt+w. You can also change it. Just go to Preferences -> Package Settings ->  JavaScript Completions Tools -> Key Bindings - User.
+You can use key-map: ctrl+alt+w. Key-Map list: Preferences -> Package Settings ->  JavaScript Completions -> Key Bindings - Default.
 After selecting an item from the list, it will appear a popup with all information from the http://caniuse.com support tables.
-You can also use the menu "JavaScript Completions Tools" on the top and select 'Search on "Can I use" list' to search what you want.
+You can find it under "Tools" menu -> "JavaScript Completions" -> Search on "Can I use" list.
 
 
 "JSDoc" Feature
@@ -110,30 +131,42 @@ Requires npm
 
 This feature uses https://github.com/jsdoc3/jsdoc to generate API documentation.
 
-You can find it under "JavaScript Completions Tools" menu -> JSDoc.
+You can find it under "Tools" menu -> "JavaScript Completions".
 
 There are 2 main menu items:
 - Generate Documentation
-- Add jsdoc-settings.json to the current project folder
+- Add jsdoc configuration file to the current project folder
 
 These items can be used only with a project folder opened.
 "Generate Documentation" uses the jsdoc command line to generate documentation.
-It uses jsdoc-settings.json file for configuration or, alternately, it will use default configuration.
+It uses conf.json file for configuration.
 The options (with default values) availables are:
 {
-  "jsdoc_conf_file": "conf.json",
-  "destination_folder": "out",
-  "display_symbols_access_property": "all",
-  "search_within_subdirectories": false,
-  "encoding_when_reading_all_source_files": "utf-8",
-  "template_path": "",
-  "tutorials_path": "",
-  "include_symbols_marked_with_the_private_tag": false,
-  "pedantic_mode": false,
-  "query_string_to_parse_and_store_in_global_variable": ""
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "source": {
+    "include": [  ],
+    "exclude": [  ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "template": "templates/default",
+    "encoding": "utf8",
+    "destination": "./out/",
+    "recurse": true,
+    "tutorials": ""
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
 }
 
-"Add jsdoc-settings.json to the current project folder" will add a jsdoc-settings.json file with default values to the current project folder.
+"Add jsdoc configuration file to the current project folder" will add a conf.json file with default values to the current project folder.
 
 How to use JSDoc: http://usejsdoc.org/
 
@@ -160,16 +193,12 @@ You can surround code with:
 - for statement
 - try catch statement
 - try catch finally statement
-- Multi-line comment
-- Single-line comment
 
 This option works also on multiple selections at once.
 
 ## Delete Surrounded ##
 
 Options are:
-- Delete multi-line comment
-- Delete single-line comment
 - Strip quoted string
 
 This option works also on multiple selections at once.
