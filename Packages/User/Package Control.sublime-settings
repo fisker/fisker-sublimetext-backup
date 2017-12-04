@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Material Theme"
 	],
 	"installed_packages":
 	[
@@ -57,6 +58,7 @@
 		"JSCS-Formatter",
 		"JsFormat",
 		"JSHint",
+		"JsPrettier",
 		"LESS",
 		"LiveReload",
 		"LiveStyle",
@@ -64,6 +66,7 @@
 		"Lodash Completions",
 		"MarieAssembly",
 		"Markdown Extended",
+		"Markdown HTML Preview",
 		"Markdown Preview",
 		"MarkdownEditing",
 		"MarkdownLivePreview",

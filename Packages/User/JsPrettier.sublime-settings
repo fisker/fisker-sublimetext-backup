@@ -1,0 +1,112 @@
+{
+  //
+  // @debug { bool | default = false }
+  //
+  // When enabled (true), additional debugging information about the command
+  // and configured settings will be printed to the Sublime Text Console;
+  // useful for troubleshooting purposes.
+
+  "debug": false,
+
+  //
+  // @prettier_cli_path { string | default = "" }
+  //
+  // It's recommended to leave the "prettier_cli_path" value
+  // empty "". However, if Sublime Text has problems resolving the path
+  // to the `prettier` cli executable, you can explicitly specify the
+  // path here.
+  //
+  // If the `prettier_cli_path` setting is left empty (""), the path is
+  // resolved by searching locations in the following order, returning the
+  // first matched path:
+  //
+  // - Locally installed prettier, relative to the Sublime Text Project file's
+  //   root directory, e.g.: `node_modules/.bin/prettier'.
+  // - The user's home directory, e.g.: `$HOME/node_modules/.bin/prettier`.
+  // - Look in the JsPrettier Sublime Text plug-in directory for
+  //   `node_modules/.bin/prettier`.
+  // - Finally, check if prettier is installed globally,
+  //   e.g.: `npm install -g prettier`.
+  //
+  // nvm users are required to set an appropriate absolute `prettier_cli_path`
+  // (and absolute `node_path`), according to the target runtime environment.
+  //
+  // Examples:
+  //
+  //     - macOS/Linux...: "/path/to/node_modules/.bin/prettier" (absolute)
+  //                   or  "./node_modules/.bin/prettier" (relative)
+  //     - Windows.......: "C:/path/to/npm/prettier" (absolute)
+
+  "prettier_cli_path": "",
+
+  //
+  // @node_path { string | default = "" }
+  //
+  // It's strongly recommended to leave the "node_path" value empty "".
+  // However, if Sublime Text has problems resolving the "absolute" path to
+  // `node`, you can explicitly specify the path here.
+  //
+  // nvm users will be required to set an appropriate absolute `node_path`
+  // (and absolute `prettier_cli_path`), according to the target runtime
+  // environment.
+  //
+  // Examples:
+  //
+  //     - macOS/Linux...: "/path/to/node"
+  //     - Windows.......: "C:/path/to/node.exe"
+
+  "node_path": "",
+
+  //
+  // @auto_format_on_save { bool | default = false }
+  //
+  // Whether or not to run the `js_prettier` command automatically
+  // on every file save (`.js` and `.jsx` file types only).
+
+  "auto_format_on_save": false,
+
+  //
+  // @allow_inline_formatting { bool | default = false }
+  //
+  // Enables the ability to format "selections" of in-lined JavaScript code,
+  // outside of the normal JavaScript syntax. For example, to format a
+  // selection of JavaScript code within a PHP or HTML file. When `true`, the
+  // JsPrettier command is available for use across all Sublime Text syntaxes.
+
+  "allow_inline_formatting": false,
+
+  //
+  // For a complete list of supported options and acceptable values,
+  // please reference the `prettier` documentation at https://github.com/jlongster/prettier
+
+  "prettier_options": {
+    // Fit code within this line limit
+    "printWidth": 80,
+
+    // If true, will use single instead of double quotes
+    "singleQuote": true,
+
+    // Controls the printing of trailing commas wherever possible.
+    //
+    // Valid options:
+    //
+    // "none" - No trailing commas
+    // "es5"  - Trailing commas where valid in ES5 (objects, arrays, etc)
+    // "all"  - Trailing commas wherever possible (function arguments)
+    "trailingComma": "none",
+
+    // Controls the printing of spaces inside array and objects
+    "bracketSpacing": true,
+
+    // If true, puts the `>` of a multi-line jsx element at the end of
+    // the last line instead of being alone on the next line
+    "jsxBracketSameLine": false,
+
+    // Which parser to use. Valid options are "flow" and "babylon"
+    "parser": "babylon",
+
+    // Whether to add a semicolon at the end of every line (semi: true),
+    // or only at the beginning of lines that may introduce ASI failures (semi: false)
+    "semi": true
+  }
+}

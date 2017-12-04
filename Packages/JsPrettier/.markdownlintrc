@@ -1,0 +1,18 @@
+{
+  "default": true,
+  "headers": { "style": "atx" },
+  "line_length": { "line_length": 120 },
+  "whitespace": { "br_spaces": 2 },
+  "ul": { "indent": 4 },
+  "ol": { "style": "ordered" },
+  "html": {
+    "allowed_elements": [
+      "a",
+      "details",
+      "kbd",
+      "p",
+      "strong",
+      "summary"
+    ]
+  }
+}

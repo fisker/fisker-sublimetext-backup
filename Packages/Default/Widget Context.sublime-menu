@@ -1,21 +1,21 @@
 [
     {
-        "command": "copy", 
-        "caption": "复制"
+        "caption": "复制", 
+        "command": "copy"
     }, 
     {
-        "command": "cut", 
-        "caption": "剪切"
+        "caption": "剪切", 
+        "command": "cut"
     }, 
     {
-        "command": "paste", 
-        "caption": "粘贴"
+        "caption": "粘贴", 
+        "command": "paste"
     }, 
     {
         "caption": "-"
     }, 
     {
-        "command": "select_all", 
-        "caption": "全选"
+        "caption": "全选", 
+        "command": "select_all"
     }
 ]

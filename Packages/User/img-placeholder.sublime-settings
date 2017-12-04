@@ -1,0 +1,19 @@
+{
+  "domains": [
+    "placehold.it",
+    "placeholder.cn",
+    "lorempixel.com",
+    "fakeimg.pl",
+    "placekitten.com",
+    "fpoimg.com",
+    "dummyimage.com",
+    "imgholder.ru"
+  ],
+  "width": 600,
+  "height": 300,
+  "protocol": "http:",
+  "backgroundColor": "ccc",
+  "textColor": "333",
+  "format": "png",
+  "text": "placeholder"
+}

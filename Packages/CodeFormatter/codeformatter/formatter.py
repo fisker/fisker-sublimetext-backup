@@ -3,10 +3,13 @@
 # @link             http://longman.me
 # @license         The MIT License (MIT)
 
-import os, sys, re, sublime
+import os
+import sys
+import re
+import sublime
 
 directory = os.path.dirname(os.path.realpath(__file__))
-libs_path = os.path.join(directory, "lib")
+libs_path = os.path.join(directory, 'lib')
 
 if libs_path not in sys.path:
     sys.path.append(libs_path)
@@ -35,115 +38,68 @@ except (ValueError):
 
 
 class Formatter:
-    def __init__(self, view=False, file_name=False, syntax=False, saving=False):
+
+    def __init__(self, view, syntax=None):
+
         self.platform = sublime.platform()
         self.classmap = {}
         self.st_version = 2
         if sublime.version() == '' or int(sublime.version()) > 3000:
             self.st_version = 3
 
-        self.file_name = file_name
+        self.file_name = view.file_name()
         self.settings = sublime.load_settings('CodeFormatter.sublime-settings')
         self.packages_path = sublime.packages_path()
 
         self.syntax_file = view.settings().get('syntax')
-        if syntax == False:
-            self.syntax = self.getSyntax()
-        else:
-            self.syntax = syntax
+        self.syntax = syntax or self.get_syntax()
 
-        self.saving = saving
+        # map of settings names with related class
+        map_settings_formatter = [
+            ('codeformatter_php_options', PhpFormatter),
+            ('codeformatter_js_options', JsFormatter),
+            ('codeformatter_css_options', CssFormatter),
+            ('codeformatter_html_options', HtmlFormatter),
+            ('codeformatter_python_options', PyFormatter),
+            ('codeformatter_vbscript_options', VbscriptFormatter),
+            ('codeformatter_scss_options', ScssFormatter),
+            ('codeformatter_coldfusion_options', ColdfusionFormatter),
+        ]
 
-        # PHP
-        opts = self.settings.get('codeformatter_php_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = PhpFormatter
-
-        # Javascript
-        opts = self.settings.get('codeformatter_js_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = JsFormatter
-
-        # CSS
-        opts = self.settings.get('codeformatter_css_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = CssFormatter
-
-        # HTML
-        opts = self.settings.get('codeformatter_html_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = HtmlFormatter
-
-        # Python
-        opts = self.settings.get('codeformatter_python_options')
-        print(opts)
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = PyFormatter
-
-        # VBScript
-        opts = self.settings.get('codeformatter_vbscript_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = VbscriptFormatter
-
-        # SCSS
-        opts = self.settings.get('codeformatter_scss_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = ScssFormatter
-
-        # COLDFUSION
-        opts = self.settings.get('codeformatter_coldfusion_options')
-        if ("syntaxes" in opts and opts["syntaxes"]):
-            for _formatter in opts["syntaxes"].split(","):
-                self.classmap[_formatter.strip()] = ColdfusionFormatter
-
-
-
+        for name, _class in map_settings_formatter:
+            syntaxes = self.settings.get(name, {}).get('syntaxes')
+            if not syntaxes or not isinstance(syntaxes, str):
+                continue
+            for _formatter in syntaxes.split(','):
+                self.classmap[_formatter.strip()] = _class
 
     def format(self, text):
         formatter = self.classmap[self.syntax](self)
         try:
             stdout, stderr = formatter.format(text)
         except Exception as e:
-            stdout = ""
+            stdout = ''
             stderr = str(e)
 
         return self.clean(stdout), self.clean(stderr)
 
-
     def exists(self):
-        if self.syntax in self.classmap:
-            return True
-        else:
-            return False
+        return self.syntax in self.classmap
 
-    def getSyntax(self):
-        pattern = re.compile(r"Packages/.*/(.+?).(?=tmLanguage|sublime-syntax)")
+    def get_syntax(self):
+        pattern = re.compile(
+            r'Packages/.*/(.+?).(?=tmLanguage|sublime-syntax)')
         m = pattern.search(self.syntax_file)
-        found = ""
-        if (m):
-            for s in m.groups():
-                found = s
-                break
+        found = ''
+        if m and len(m.groups()) > 0:
+            found = m.groups()[0]
         return found.lower()
 
-
-
-
-    def formatOnSaveEnabled(self):
-        if (not self.exists()):
+    def format_on_save_enabled(self):
+        if not self.exists():
             return False
         formatter = self.classmap[self.syntax](self)
-        return formatter.formatOnSaveEnabled(self.file_name)
-
-
-
+        return formatter.format_on_save_enabled(self.file_name)
 
     def clean(self, string):
         if hasattr(string, 'decode'):

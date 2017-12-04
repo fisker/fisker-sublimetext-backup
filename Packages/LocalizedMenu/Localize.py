@@ -60,7 +60,8 @@ def setLocale(locale, force = False):
 
 	sDir = ''
 	d = os.path.join(mDir, version)
-	if (not os.path.isdir(d)) and getSetting('findSimilarVer'):
+	ld = os.path.join(d, locale)
+	if (not os.path.isdir(ld)) and getSetting('findSimilarVer', True):
 		sDir = findSimilarVer()
 		if not sDir:
 			return
@@ -176,7 +177,7 @@ def makeMenu(locale, force = False):
 			caption = item
 			if isset(conf, 'caption') and conf['caption']:
 				caption = conf['caption']
-			menu[0]['children'][1]['children'].append({
+			menu[0]['children'][2]['children'].append({
 				"command": "localize",
 				"checkbox": True,
 				"args": {

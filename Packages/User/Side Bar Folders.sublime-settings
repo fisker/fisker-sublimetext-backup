@@ -2,6 +2,9 @@
 	"folders":
 	[
 		{
+			"path": "F:\\Desktop\\云南后台 - 副本"
+		},
+		{
 			"path": "E:\\work\\四川电渠扩容三期\\开发库\\源代码\\html\\wap\\source\\static\\style"
 		},
 		{
@@ -12,6 +15,9 @@
 		},
 		{
 			"path": "E:\\project\\package_control_channel"
+		},
+		{
+			"path": "E:\\project\\fis3-tools\\fis3-boilerplate"
 		}
 	]
 }
