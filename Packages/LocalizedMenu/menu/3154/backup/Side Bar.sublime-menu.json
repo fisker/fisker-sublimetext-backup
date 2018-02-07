@@ -1,59 +1,59 @@
 [
     {
-        "caption": "新建文件", 
         "args": {
             "dirs": []
         }, 
+        "caption": "新建文件", 
         "command": "new_file_at"
     }, 
     {
-        "caption": "重命名…", 
         "args": {
             "paths": []
         }, 
+        "caption": "重命名…", 
         "command": "rename_path"
     }, 
     {
-        "caption": "删除文件", 
         "args": {
             "files": []
         }, 
+        "caption": "删除文件", 
         "command": "delete_file"
     }, 
     {
-        "caption": "打开所在文件夹…", 
         "args": {
             "files": []
         }, 
+        "caption": "打开所在文件夹…", 
         "command": "open_containing_folder"
     }, 
     {
-        "caption": "-", 
-        "id": "folder_commands"
+        "id": "folder_commands", 
+        "caption": "-"
     }, 
     {
-        "caption": "新建文件夹…", 
         "args": {
             "dirs": []
         }, 
+        "caption": "新建文件夹…", 
         "command": "new_folder"
     }, 
     {
-        "caption": "删除文件夹", 
         "args": {
             "dirs": []
         }, 
+        "caption": "删除文件夹", 
         "command": "delete_folder"
     }, 
     {
-        "caption": "在文件夹中查找…", 
         "args": {
             "dirs": []
         }, 
+        "caption": "在文件夹中查找…", 
         "command": "find_in_folder"
     }, 
     {
-        "caption": "-", 
-        "id": "end"
+        "id": "end", 
+        "caption": "-"
     }
 ]

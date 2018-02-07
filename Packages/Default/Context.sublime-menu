@@ -8,8 +8,8 @@
         "command": "context_goto_definition"
     }, 
     {
-        "caption": "-", 
-        "id": "clipboard"
+        "id": "clipboard", 
+        "caption": "-"
     }, 
     {
         "caption": "复制", 
@@ -24,16 +24,16 @@
         "command": "paste"
     }, 
     {
-        "caption": "-", 
-        "id": "selection"
+        "id": "selection", 
+        "caption": "-"
     }, 
     {
         "caption": "全选", 
         "command": "select_all"
     }, 
     {
-        "caption": "-", 
-        "id": "file"
+        "id": "file", 
+        "caption": "-"
     }, 
     {
         "caption": "在浏览器中打开", 
@@ -42,8 +42,8 @@
     {
         "caption": "打开所在文件夹…", 
         "args": {
-            "dir": "$file_path", 
-            "file": "$file_name"
+            "file": "$file_name", 
+            "dir": "$file_path"
         }, 
         "command": "open_dir"
     }, 
@@ -56,7 +56,7 @@
         "command": "reveal_in_side_bar"
     }, 
     {
-        "caption": "-", 
-        "id": "end"
+        "id": "end", 
+        "caption": "-"
     }
 ]

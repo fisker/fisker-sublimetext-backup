@@ -93,17 +93,17 @@
         "caption": "-"
     }, 
     {
-        "caption": "转为空格缩进", 
         "args": {
             "set_translate_tabs": true
         }, 
+        "caption": "转为空格缩进", 
         "command": "expand_tabs"
     }, 
     {
-        "caption": "转为制表符缩进", 
         "args": {
             "set_translate_tabs": true
         }, 
+        "caption": "转为制表符缩进", 
         "command": "unexpand_tabs"
     }
 ]

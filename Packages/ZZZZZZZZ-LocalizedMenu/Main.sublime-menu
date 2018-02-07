@@ -1,52 +1,52 @@
 [
     {
-        "caption": "文件(F)", 
         "id": "file", 
-        "mnemonic": "F"
+        "mnemonic": "F", 
+        "caption": "文件(F)"
     }, 
     {
-        "caption": "编辑(E)", 
         "id": "edit", 
-        "mnemonic": "E"
+        "mnemonic": "E", 
+        "caption": "编辑(E)"
     }, 
     {
-        "caption": "选择(S)", 
         "id": "selection", 
-        "mnemonic": "S"
+        "mnemonic": "S", 
+        "caption": "选择(S)"
     }, 
     {
-        "caption": "查找(I)", 
         "id": "find", 
-        "mnemonic": "I"
+        "mnemonic": "I", 
+        "caption": "查找(I)"
     }, 
     {
-        "caption": "查看(V)", 
         "id": "view", 
-        "mnemonic": "V"
+        "mnemonic": "V", 
+        "caption": "查看(V)"
     }, 
     {
-        "caption": "转跳(G)", 
         "id": "goto", 
-        "mnemonic": "G"
+        "mnemonic": "G", 
+        "caption": "转跳(G)"
     }, 
     {
-        "caption": "工具(T)", 
         "id": "tools", 
-        "mnemonic": "T"
+        "mnemonic": "T", 
+        "caption": "工具(T)"
     }, 
     {
-        "caption": "项目(P)", 
         "id": "project", 
-        "mnemonic": "P"
+        "mnemonic": "P", 
+        "caption": "项目(P)"
     }, 
     {
-        "caption": "设置(N)", 
         "id": "preferences", 
-        "mnemonic": "N"
+        "mnemonic": "N", 
+        "caption": "设置(N)"
     }, 
     {
-        "caption": "帮助(H)", 
         "id": "help", 
-        "mnemonic": "H"
+        "mnemonic": "H", 
+        "caption": "帮助(H)"
     }
 ]

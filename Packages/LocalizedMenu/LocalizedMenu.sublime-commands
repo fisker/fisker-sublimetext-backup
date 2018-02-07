@@ -1,30 +1,30 @@
 [
     {
-        "caption": "LocalizedMenu: Detect", 
         "args": {
             "action": "detect"
         }, 
+        "caption": "LocalizedMenu: Detect", 
         "command": "localize_run"
     }, 
     {
-        "caption": "LocalizedMenu: Reset", 
         "args": {
             "action": "reset"
         }, 
+        "caption": "LocalizedMenu: Reset", 
         "command": "localize_run"
     }, 
     {
-        "caption": "LocalizedMenu: Add Language…", 
         "args": {
             "action": "add"
         }, 
+        "caption": "LocalizedMenu: Add Language…", 
         "command": "localize_run"
     }, 
     {
-        "caption": "LocalizedMenu: Submit Language…", 
         "args": {
             "action": "submit"
         }, 
+        "caption": "LocalizedMenu: Submit Language…", 
         "command": "localize_run"
     }, 
     {
@@ -52,6 +52,13 @@
         "caption": "LocalizedMenu: Español (es_ES)", 
         "args": {
             "locale": "es_ES"
+        }, 
+        "command": "localize"
+    }, 
+    {
+        "caption": "LocalizedMenu: Français (fr_FR)", 
+        "args": {
+            "locale": "fr_FR"
         }, 
         "command": "localize"
     }, 

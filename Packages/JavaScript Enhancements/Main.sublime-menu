@@ -1,0 +1,151 @@
+[ 
+  {
+    "caption": "Tools",
+    "id": "tools",
+    "children": [
+      {
+        "caption": "JavaScript Enhancements",
+        "mnemonic": "J",
+        "id": "javascript_completions_tools",
+        "children":[    
+          {
+            "caption": "Use Flow checker on current view (Not used in project)",
+            "id": "use_flow_checker_on_current_view",
+            "checkbox": true,
+            "command": "toggle_setting",
+            "args": {"setting": "use_flow_checker_on_current_view"}
+          },
+          {
+            "caption": "Flow Goto Definition",
+            "id": "go_to_def",
+            "command": "go_to_def"
+          },
+          {
+            "caption": "Show Hint Parameters",
+            "id": "show_hint_parameters",
+            "command": "show_hint_parameters"
+          },
+          {
+            "caption": "Show Completions",
+            "id": "show_completions",
+            "command": "auto_complete",
+            "args": {
+              "disable_auto_insert": true,
+              "api_completions_only": false,
+              "next_completion_if_showing": false,
+              "auto_complete_commit_on_tab": true,
+            }
+          },
+          {
+            "caption": "Search on \"Can I use\" list",
+            "id": "can_i_use_list",
+            "command": "can_i_use",
+            "args": {"from": "main-menu"}
+          },
+          {
+            "caption": "Show Bookmarks Options",
+            "id": "show_bookmarks_options",
+            "command": "show_overlay" ,
+            "args": {"overlay": "command_palette", "text": "JavaScript Enhancements Bookmarks: "}
+          },
+          { "caption": "-" },
+          {
+            "caption": "JSDoc",
+            "id": "jsdoc",
+            "children": [
+              {
+                "caption": "Generate Documentation",
+                "command": "generate_jsdoc"
+              },
+              {
+                "caption": "Add a jsdoc configuration file",
+                "command": "add_jsdoc_conf"
+              },
+              { "caption": "-" },
+              {
+                "caption": "Go to JSDoc Site",
+                "command": "open_url",
+                "args": {"url": "http://usejsdoc.org/"}
+              }
+            ]
+          },
+          { "caption": "-" },
+          {
+            "caption": "GitHub Project",
+            "command": "open_url",
+            "args": {"url": "https://github.com/pichillilorenzo/JavaScriptEnhancements"}
+          },
+          {
+            "caption": "Donate to this Project",
+            "command": "open_url",
+            "args": {"url": "https://opencollective.com/javascriptenhancements"}
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "caption": "Project",
+    "id": "project",
+    "children":
+    [
+      { "caption": "-" },
+      {
+        "caption": "Create JavaScript Project",
+        "command": "create_new_project",
+        "id": "create_new_project"
+      },
+      {
+        "caption": "Add JavaScript Project type",
+        "command": "add_javascript_project_type",
+        "id": "add_javascript_project_type",
+      },
+      {
+        "caption": "Add JavaScript type configuration",
+        "command": "add_javascript_project_type_configuration",
+        "id": "add_javascript_project_type_configuration"
+      }
+    ]
+  },
+  {
+    "caption": "Preferences",
+    "mnemonic": "n",
+    "id": "preferences",
+    "children": [
+      {
+        "caption": "Package Settings",
+        "mnemonic": "P",
+        "id": "package-settings",
+        "children": [
+          {
+            "caption": "JavaScript Enhancements",
+            "children": [
+              {
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/JavaScript Enhancements/JavaScript Enhancements.sublime-settings", 
+                  "default": "{}"
+                }
+              },
+              { "caption": "-" },
+              {
+                  "command": "edit_settings",
+                  "args": {
+                      "base_file": "${packages}/JavaScript Enhancements/Default.sublime-keymap",
+                      "default": "{}"
+                  },
+                  "caption": "Key Bindings"
+              },
+              { "caption": "-" },
+              {
+                "caption": "Version",
+                "command": "show_javascript_enhancements_version"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
