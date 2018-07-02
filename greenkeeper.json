@@ -1,0 +1,16 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "Packages/Autoprefixer/package.json",
+        "Packages/Babel/package.json",
+        "Packages/CSScomb/package.json",
+        "Packages/HTML-CSS-JS Prettify/build/js-transpiled/package.json",
+        "Packages/HTML-CSS-JS Prettify/package.json",
+        "Packages/JavaScript Enhancements/package.json",
+        "Packages/LiveReload/web/package.json",
+        "Packages/sublime-stylefmt/package.json"
+      ]
+    }
+  }
+}
